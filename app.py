@@ -288,6 +288,74 @@ dropdown_style_fix = """
     .stSidebar * {
         color: white !important;
     }
+    
+    /* COMPLETE SIDEBAR OVERRIDE - Force dark theme with white text */
+    section[data-testid="stSidebar"] {
+        background-color: #262730 !important;
+        color: white !important;
+    }
+    
+    section[data-testid="stSidebar"] * {
+        color: white !important;
+        background-color: transparent !important;
+    }
+    
+    /* Navigation menu items */
+    nav[data-testid="stSidebarNav"] {
+        background-color: #262730 !important;
+        color: white !important;
+    }
+    
+    nav[data-testid="stSidebarNav"] * {
+        color: white !important;
+        background-color: transparent !important;
+    }
+    
+    /* All text elements in sidebar */
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] span,
+    section[data-testid="stSidebar"] div,
+    section[data-testid="stSidebar"] a,
+    section[data-testid="stSidebar"] label,
+    nav[data-testid="stSidebarNav"] p,
+    nav[data-testid="stSidebarNav"] span,
+    nav[data-testid="stSidebarNav"] div,
+    nav[data-testid="stSidebarNav"] a,
+    nav[data-testid="stSidebarNav"] label {
+        color: white !important;
+        background-color: transparent !important;
+    }
+    
+    /* Override any Streamlit default styles */
+    .css-1d391kg,
+    .css-1lcbmhc,
+    .css-1wivap2,
+    .css-1d391kg *,
+    .css-1lcbmhc *,
+    .css-1wivap2 * {
+        color: white !important;
+        background-color: transparent !important;
+    }
+    
+    /* Force sidebar background */
+    .css-1d391kg {
+        background-color: #262730 !important;
+    }
+    
+    /* All possible sidebar selectors */
+    [class*="css"][class*="sidebar"],
+    [class*="css"][class*="nav"],
+    [class*="css"][class*="menu"] {
+        color: white !important;
+        background-color: #262730 !important;
+    }
+    
+    [class*="css"][class*="sidebar"] *,
+    [class*="css"][class*="nav"] *,
+    [class*="css"][class*="menu"] * {
+        color: white !important;
+        background-color: transparent !important;
+    }
 </style>
 """
 
@@ -452,6 +520,60 @@ js_fix = """
         attributes: true,
         attributeFilter: ['style', 'class']
     });
+    
+    // AGGRESSIVE SIDEBAR FIX - Force all sidebar elements to be white
+    function forceSidebarWhite() {
+        // Find all elements in the sidebar
+        const sidebar = document.querySelector('section[data-testid="stSidebar"]');
+        const sidebarNav = document.querySelector('nav[data-testid="stSidebarNav"]');
+        
+        if (sidebar) {
+            // Force sidebar background
+            sidebar.style.backgroundColor = '#262730';
+            sidebar.style.color = 'white';
+            
+            // Force all child elements to be white
+            const allElements = sidebar.querySelectorAll('*');
+            allElements.forEach(element => {
+                if (element.textContent && element.textContent.trim() !== '') {
+                    element.style.color = 'white';
+                    element.style.backgroundColor = 'transparent';
+                    element.style.webkitTextFillColor = 'white';
+                }
+            });
+        }
+        
+        if (sidebarNav) {
+            // Force navigation background
+            sidebarNav.style.backgroundColor = '#262730';
+            sidebarNav.style.color = 'white';
+            
+            // Force all navigation elements to be white
+            const navElements = sidebarNav.querySelectorAll('*');
+            navElements.forEach(element => {
+                if (element.textContent && element.textContent.trim() !== '') {
+                    element.style.color = 'white';
+                    element.style.backgroundColor = 'transparent';
+                    element.style.webkitTextFillColor = 'white';
+                }
+            });
+        }
+        
+        // Override any black text anywhere in the sidebar
+        const blackTextElements = document.querySelectorAll('section[data-testid="stSidebar"] [style*="color: black"], section[data-testid="stSidebar"] [style*="color: rgb(0, 0, 0)"], nav[data-testid="stSidebarNav"] [style*="color: black"], nav[data-testid="stSidebarNav"] [style*="color: rgb(0, 0, 0)"]');
+        blackTextElements.forEach(element => {
+            element.style.color = 'white';
+            element.style.webkitTextFillColor = 'white';
+        });
+    }
+    
+    // Run aggressive fix
+    setTimeout(forceSidebarWhite, 100);
+    setInterval(forceSidebarWhite, 1000);
+    
+    // Also run on page load and DOM changes
+    document.addEventListener('DOMContentLoaded', forceSidebarWhite);
+    window.addEventListener('load', forceSidebarWhite);
 </script>
 """
 
