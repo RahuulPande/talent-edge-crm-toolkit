@@ -1,316 +1,290 @@
-# 🚀 Cognizant Talent Edge CRM Toolkit
+# 🎯 Cognizant Talent Edge CRM Toolkit
 
-## Swiss Banking IT Consulting Edition v2.0
+**Developed by Rahuul Pande (152044), Cognizant**
 
-![Talent Edge Banner](docs/images/banner.png)
+A comprehensive Swiss banking talent management and client relationship excellence platform designed for UBS partnership success.
 
-A comprehensive CRM toolkit designed specifically for Cognizant's Swiss banking practice, enabling CRMs to showcase associate skills, availability, and team configurations for UBS and other Swiss financial institutions.
+## 🚀 Key Features
 
-## 🎯 Overview
+### 📊 **Executive Dashboard**
+- Real-time KPIs and team metrics
+- Swiss banking insights and compliance tracking
+- Interactive charts and performance analytics
+- UBS and Credit Suisse specific metrics
 
-The Talent Edge CRM Toolkit is an enterprise-grade Streamlit application that provides:
+### 🔍 **Advanced Talent Search**
+- Multi-dimensional filtering (skills, location, experience)
+- AI-powered recommendations
+- Real-time availability tracking
+- Professional candidate profiles
 
-- **Real-time talent visualization** across 6 global delivery centers
-- **Swiss banking-specific intelligence** with FINMA compliance tracking
-- **Pre-configured team templates** for major banking projects
-- **Advanced cost optimization models** with hybrid delivery options
-- **AI-powered natural language queries** for instant talent insights
-- **Executive dashboard** with comprehensive analytics
+### 👥 **Smart Team Builder**
+- Optimal team composition algorithms
+- Cost and skill optimization
+- Project timeline planning
+- Resource allocation strategies
 
-## ✨ Key Features
+### 📈 **Project Analytics**
+- Deep insights into project performance
+- Profitability analysis
+- Risk assessment
+- Timeline tracking
 
-### 🏠 Executive Dashboard
-- Real-time metrics for 2,150+ associates across Zurich, Geneva, Basel, Pune, Bangalore, Chennai
-- Pre-configured team templates with cost projections
-- Cost optimization models comparing delivery approaches
-- Swiss banking readiness indicators
+### 💼 **CRM Tools & Client Management**
+- **Client Management**: Track UBS and Credit Suisse relationships
+- **Deal Pipeline**: Monitor $41M pipeline with stage tracking
+- **Meeting Scheduler**: Schedule and manage client meetings
+- **Email Templates**: Professional communication templates
+- **📄 Proposal Templates**: 6 comprehensive Swiss banking templates
+- **📋 Contract Management**: Complete contract lifecycle management
+- **📊 Performance Analytics**: Revenue trends and client metrics
 
-### 🔍 Advanced Talent Search
-- Multi-dimensional filtering (Project Type, Skills, Role, Location)
-- Smart team builder with proven templates
-- Advanced cost calculator with delivery model optimization
-- Instant PDF report generation
+### 📊 **Advanced Analytics**
+- Predictive insights and forecasting
+- Cost optimization models
+- Swiss banking compliance metrics
+- Performance benchmarking
 
-### 📊 Executive Analytics
-- Geographic talent distribution analysis
-- Project readiness scoring across banking initiatives
-- Skill availability heatmaps
-- 6-month growth trend analysis
+### 📱 **Mobile Optimization**
+- **QR Code Access**: Scan to open on mobile devices
+- **Responsive Design**: Works on all screen sizes
+- **Touch-Friendly**: Optimized for mobile interaction
+- **Dark Mode Support**: Automatic system preference detection
 
-### 📅 Availability Management
-- Real-time availability tracking with visa status
-- Deployment timeline simulation
-- Resource calendar integration
-- Utilization optimization
+## 🏦 Swiss Banking Expertise
 
-### 🤖 AI-Powered Insights
-- Natural language query processing
-- Swiss banking context awareness
-- FINMA compliance intelligence
-- Cost and budget optimization suggestions
+### **UBS Integration**
+- Regulatory compliance (FINMA, SNB)
+- Risk management frameworks (Basel III/IV)
+- Digital transformation expertise
+- Wealth management solutions
+
+### **Credit Suisse Expertise**
+- Investment banking capabilities
+- Asset management optimization
+- Private banking services
+- Technology platform modernization
+
+## 📱 Mobile Access
+
+### **QR Code Feature**
+- Scan QR code to access on mobile devices
+- Responsive design for all screen sizes
+- Touch-friendly interface
+- Fast loading times
+
+### **Mobile Features**
+- Real-time dashboard metrics
+- Advanced talent search
+- Team builder functionality
+- Project analytics
+- CRM tools and client management
+- Proposal templates
+- Contract management
 
 ## 🛠️ Technical Architecture
 
-### Core Components
-- **Frontend**: Streamlit with custom CSS/JavaScript
-- **Data Layer**: Pandas with comprehensive Swiss banking data model
-- **Analytics**: Plotly for interactive visualizations
-- **Reports**: ReportLab for PDF generation
-- **AI**: Enhanced NLP for natural language queries
+### **Frontend**
+- **Framework**: Streamlit
+- **Styling**: Custom CSS with animations
+- **Charts**: Plotly interactive visualizations
+- **Mobile**: Responsive design with QR code access
 
-### Data Structure
-- **2,150+ Associate profiles** with Swiss banking expertise
-- **50+ Banking platforms** (Avaloq, Temenos, Murex, etc.)
-- **Comprehensive role hierarchy** from Junior Engineers to Enterprise Architects
-- **Multi-language capabilities** (German, French, Italian, English)
-- **Visa status tracking** for Swiss compliance
+### **Backend**
+- **Language**: Python 3.9+
+- **Data Processing**: Pandas
+- **Analytics**: Advanced analytics module
+- **Reporting**: PDF generation with ReportLab
+
+### **Data Structure**
+- **Enhanced Mock Data**: Comprehensive Swiss banking dataset
+- **Real-time Updates**: Dynamic data processing
+- **Scalable Architecture**: Modular design
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Python 3.9+
-- macOS/Windows/Linux
-- Modern web browser (Chrome, Safari, Firefox, Edge)
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd CRM_APP
-   ```
-
-2. **Set up virtual environment**
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   python3 -m pip install -r requirements.txt
-   ```
-
-4. **Run the application**
-   ```bash
-   python3 -m streamlit run app.py
-   ```
-
-5. **Access the application**
-   - Local URL: http://localhost:8501
-   - Network URL: Available in terminal output
-
-## 📋 System Requirements
-
-### Minimum Requirements
-- **Python**: 3.9 or higher
-- **RAM**: 4GB minimum, 8GB recommended
-- **Storage**: 500MB free space
-- **Network**: Internet connection for initial setup
-
-### Recommended Environment
-- **OS**: macOS 12+, Windows 10+, Ubuntu 20.04+
-- **Browser**: Latest version of Chrome, Safari, or Firefox
-- **Display**: 1920x1080 or higher resolution
-
-## 🎨 User Interface
-
-### Navigation Structure
-```
-├── 🏠 Dashboard (Executive Overview)
-├── 🔍 Project Query (Talent Search & Team Builder)
-├── 📊 Visualizations (Analytics & Insights)
-├── 📅 Availability (Resource Management)
-└── ❓ Help (Documentation & Support)
+### **Prerequisites**
+```bash
+Python 3.9+
+pip install -r requirements.txt
 ```
 
-### Key UI Components
-- **Responsive design** optimized for desktop and tablet
-- **Professional Swiss banking theme** with Cognizant branding
-- **Interactive visualizations** with hover effects and drill-down capabilities
-- **Advanced dropdown fixes** ensuring perfect visibility across all browsers
+### **Installation**
+```bash
+# Clone the repository
+git clone https://github.com/RahuulPande/talent-edge-crm-toolkit.git
+cd talent-edge-crm-toolkit
 
-## 🏦 Swiss Banking Focus
+# Install dependencies
+pip install -r requirements.txt
 
-### UBS-Specific Features
-- **Credit Suisse Integration** templates and resource allocation
-- **FINMA compliance** tracking and reporting
-- **German/French language** capabilities for client-facing roles
-- **Swiss visa status** monitoring for regulatory compliance
+# Run the application
+streamlit run app.py
+```
 
-### Banking Platform Expertise
-- **Core Banking**: Avaloq, Temenos T24, Finnova, Oracle FLEXCUBE
-- **Trading**: Murex, Calypso, Front Arena, Summit
-- **Risk Management**: Axiom, Moody's RiskCalc, MSCI RiskMetrics
-- **Payments**: SWIFT, ISO20022, SEPA, TARGET2, SIX Payment
+### **Mobile Access**
+1. Open the app in your browser
+2. Navigate to the Introduction page
+3. Scan the QR code with your mobile device
+4. Access all features on mobile
+
+## 📊 Features Overview
+
+### **Navigation Structure**
+- 🏠 **Introduction** → Landing page with QR code access
+- 📊 **Dashboard** → Executive metrics and KPIs
+- 🔍 **Talent Search** → Advanced filtering and search
+- 👥 **Team Builder** → Optimal team composition
+- 📈 **Project Query** → AI-powered project analytics
+- 📊 **Advanced Analytics** → Predictive insights
+- 💼 **CRM Tools** → Client management and pipeline
+- ❓ **Help** → User guide and support
+
+### **CRM Tools (7 Comprehensive Tabs)**
+1. **👥 Client Management** - UBS/CS relationship tracking
+2. **💰 Deal Pipeline** - $41M pipeline monitoring
+3. **📅 Meeting Scheduler** - Client meeting management
+4. **📧 Email Templates** - Professional communication
+5. **📄 Proposal Templates** - 6 Swiss banking templates
+6. **📋 Contract Management** - Contract lifecycle management
+7. **📊 Performance Analytics** - Revenue and client metrics
+
+## 🏦 Business Impact
+
+### **For UBS Partnership**
+- **Professional Presentation**: Comprehensive proposal templates
+- **Contract Management**: Track CHF 13.2M in contracts
+- **Mobile Access**: On-the-go client meetings
+- **Swiss Compliance**: FINMA, SNB, Basel frameworks
+
+### **For CRM Success**
+- **Client Tracking**: Real-time relationship management
+- **Deal Pipeline**: $41M opportunity tracking
+- **Communication**: Professional email templates
+- **Performance**: Revenue and client satisfaction metrics
+
+## 📱 Mobile Features
+
+### **QR Code Access**
+- Generate QR codes for mobile access
+- Responsive design for all devices
+- Touch-friendly interface
+- Fast loading times
+
+### **Mobile Optimization**
+- **Responsive Design**: Works on all screen sizes
+- **Touch-Friendly**: 44px minimum touch targets
+- **Mobile Charts**: Optimized chart heights
+- **Dark Mode Support**: Automatic system preference detection
+- **Accessibility**: Focus indicators and keyboard navigation
 
 ## 🔧 Configuration
 
-### Environment Variables
+### **Environment Setup**
 ```bash
-# Optional: Customize application settings
-STREAMLIT_SERVER_PORT=8501
-STREAMLIT_SERVER_ADDRESS=localhost
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-### Data Configuration
-The application uses a sophisticated data generation system in `enhanced_data_structure.py`:
-- Configurable associate count (default: 2,150)
-- Customizable skill taxonomies
-- Adjustable cost models and rate cards
+### **Streamlit Configuration**
+```toml
+# .streamlit/config.toml
+[server]
+port = 8501
+address = "0.0.0.0"
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#1f77b4"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#262730"
+```
 
 ## 📊 Analytics & Reporting
 
-### Dashboard Metrics
-- **Total Associates**: Real-time count across all locations
-- **Swiss-based Resources**: Zurich, Geneva, Basel availability
-- **Immediate Availability**: Associates ready for deployment
-- **UBS Readiness**: Specialists prepared for UBS projects
+### **Advanced Analytics Module**
+- Predictive insights for talent demand
+- Cost optimization models
+- Swiss banking compliance metrics
+- Performance benchmarking
 
-### Report Generation
-- **PDF Reports**: Executive summaries with detailed breakdowns
-- **Excel Exports**: Data extracts for further analysis
-- **Cost Projections**: Multi-scenario financial modeling
+### **PDF Report Generation**
+- Executive summaries
+- Team composition reports
+- Project analytics
+- Client presentations
 
-## 🤖 AI-Powered Features
+## 🚀 Deployment
 
-### Natural Language Queries
-Examples of supported queries:
-- "CS Integration specialists in Zurich"
-- "FINMA compliance experts with German language"
-- "Avaloq developers for UBS project"
-- "Cost optimization for 25-person hybrid team"
+### **Streamlit Cloud**
+1. Visit [share.streamlit.io](https://share.streamlit.io)
+2. Connect your GitHub repository
+3. Deploy with main file: `app.py`
+4. Access your app with QR code for mobile
 
-### Intelligent Responses
-The AI system provides contextual responses including:
-- **Skill availability** with immediate deployment options
-- **Cost comparisons** across delivery models
-- **Compliance information** for regulatory requirements
-- **Language capabilities** for client-facing roles
-
-## 🔒 Security & Compliance
-
-### Data Protection
-- **Swiss DPA compliance** for data residency requirements
-- **GDPR alignment** for EU citizen data handling
-- **Encryption standards** using AES-256 minimum
-- **Access controls** with role-based permissions
-
-### Banking Compliance
-- **FINMA regulations** embedded in talent profiles
-- **Basel III requirements** tracked for risk management roles
-- **Audit trails** for all talent allocation decisions
-
-## 🚀 Deployment Options
-
-### Local Development
+### **Local Development**
 ```bash
-# Standard local deployment
-python3 -m streamlit run app.py
+streamlit run app.py
 ```
 
-### Production Deployment
-```bash
-# Production-ready deployment with optimizations
-python3 -m streamlit run app.py --server.port 8501 --server.headless true
-```
+## 📚 Documentation
 
-### Docker Deployment
-```dockerfile
-FROM python:3.9-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 8501
-CMD ["python", "-m", "streamlit", "run", "app.py", "--server.port", "8501", "--server.headless", "true"]
-```
-
-## 🛠️ Troubleshooting
-
-### Common Issues
-
-1. **Dropdown text not visible**
-   - **Solution**: The app includes comprehensive dropdown visibility fixes
-   - **Verification**: Check that CSS and JavaScript fixes are loading properly
-
-2. **Module import errors**
-   - **Solution**: Ensure all dependencies are installed: `pip install -r requirements.txt`
-   - **Note**: Use `python3 -m pip` if `pip` command not found
-
-3. **Data loading issues**
-   - **Solution**: Verify `enhanced_data_structure.py` is in the same directory
-   - **Check**: Confirm pandas and numpy are properly installed
-
-4. **Performance issues**
-   - **Solution**: Install Watchdog for better file monitoring: `pip install watchdog`
-   - **Optimization**: Use caching for large datasets
-
-### Getting Help
-- **Documentation**: Check `/docs` folder for detailed guides
-- **Issues**: Create GitHub issues for bug reports
-- **Support**: Contact the development team for enterprise support
-
-## 📈 Performance Optimization
-
-### Caching Strategy
-- **Data caching** using `@st.cache_data` for expensive operations
-- **Component caching** for frequently accessed UI elements
-- **Session state management** for user preferences
-
-### Best Practices
-- **Lazy loading** for large datasets
-- **Pagination** for extensive search results
-- **Optimized queries** for database operations
-
-## 🔄 Version History
-
-### v2.0 - Current Release
-- ✅ Comprehensive Swiss banking data model
-- ✅ Advanced dropdown visibility fixes
-- ✅ Pre-configured team templates
-- ✅ Cost optimization models
-- ✅ Enhanced AI-powered queries
-
-### v1.0 - Initial Release
-- ✅ Basic talent search functionality
-- ✅ Simple dashboard metrics
-- ✅ PDF report generation
+- **📖 User Guide**: `docs/user-guide.md`
+- **🔧 Technical Reference**: `docs/technical-reference.md`
+- **📋 API Reference**: `docs/api-reference.md`
+- **🚀 Deployment Guide**: `STREAMLIT_CLOUD_DEPLOYMENT.md`
 
 ## 🤝 Contributing
 
-### Development Workflow
-1. **Fork the repository**
-2. **Create feature branch**: `git checkout -b feature/new-feature`
-3. **Make changes** with proper testing
-4. **Submit pull request** with detailed description
+### **Development Guidelines**
+1. Follow Python PEP 8 standards
+2. Add comprehensive documentation
+3. Test all features thoroughly
+4. Update requirements.txt for new dependencies
 
-### Code Standards
-- **PEP 8** compliance for Python code
-- **Comprehensive documentation** for new features
-- **Unit tests** for critical functionality
-- **Security review** for data handling changes
-
-## 📄 License
-
-This project is proprietary to Cognizant Technology Solutions. All rights reserved.
-
-For licensing inquiries, contact: [legal@cognizant.com](mailto:legal@cognizant.com)
+### **Feature Requests**
+- Mobile app development
+- Real-time notifications
+- Advanced authentication
+- Integration with external systems
 
 ## 📞 Support
 
-### Enterprise Support
-- **Email**: talentedge@cognizant.com
-- **Phone**: +41 58 123 4567 (Switzerland)
-- **Hours**: 24/7 for critical issues
+### **Technical Support**
+- **Documentation**: Comprehensive guides in `docs/`
+- **Issues**: GitHub Issues for bug reports
+- **Features**: GitHub Discussions for feature requests
 
-### Documentation
-- **User Guides**: [docs/user-guide.md](docs/user-guide.md)
-- **Technical Reference**: [docs/technical-reference.md](docs/technical-reference.md)
-- **API Documentation**: [docs/api-reference.md](docs/api-reference.md)
+### **Business Support**
+- **UBS Partnership**: Swiss banking expertise
+- **CRM Excellence**: Client relationship management
+- **Talent Management**: Advanced search and team building
+
+## 📈 Roadmap
+
+### **Version 2.1 (Planned)**
+- [ ] Real-time notifications
+- [ ] Advanced authentication
+- [ ] Integration with HR systems
+- [ ] Mobile app development
+
+### **Version 2.2 (Future)**
+- [ ] AI-powered insights
+- [ ] Advanced reporting
+- [ ] Multi-language support
+- [ ] API integrations
+
+## 📄 License
+
+This project is developed by **Rahuul Pande (152044)** for Cognizant's Swiss banking initiatives.
 
 ---
 
-**Built with ❤️ for UBS Partnership Success**
-
-© 2025 Cognizant Technology Solutions. All rights reserved. 
+**🎯 Transform your CRM operations with the Cognizant Talent Edge CRM Toolkit!** 

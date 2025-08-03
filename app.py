@@ -12,6 +12,8 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 import time
 from advanced_analytics import show_advanced_analytics
+import qrcode
+from PIL import Image as PILImage
 
 # Page configuration
 st.set_page_config(
@@ -1130,6 +1132,67 @@ def show_introduction_page():
         - **Private Banking**: High-net-worth services
         - **Technology Platforms**: Trading systems, risk engines
         """)
+    
+    # Mobile QR Code Section
+    st.markdown("## 📱 Mobile Access")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        ### 📱 Scan to Access on Mobile
+        Scan the QR code with your mobile device to access the CRM Toolkit on the go.
+        
+        **Features Available on Mobile:**
+        - 📊 Real-time dashboard metrics
+        - 🔍 Advanced talent search
+        - 👥 Team builder functionality
+        - 📈 Project analytics
+        - 💼 CRM tools and client management
+        - 📄 Proposal templates
+        - 📋 Contract management
+        
+        **Mobile Optimized for:**
+        - 📱 iPhone and Android devices
+        - 📱 Responsive design
+        - 📱 Touch-friendly interface
+        - 📱 Fast loading times
+        """)
+    
+    with col2:
+        # Generate QR Code
+        def generate_qr_code(url):
+            qr = qrcode.QRCode(
+                version=1,
+                error_correction=qrcode.constants.ERROR_CORRECT_L,
+                box_size=10,
+                border=4,
+            )
+            qr.add_data(url)
+            qr.make(fit=True)
+            
+            img = qr.make_image(fill_color="black", back_color="white")
+            return img
+        
+        # Get current URL (for local development, use localhost)
+        current_url = "http://localhost:8501"  # This will be updated for production
+        qr_img = generate_qr_code(current_url)
+        
+        # Convert PIL image to bytes
+        img_buffer = BytesIO()
+        qr_img.save(img_buffer, format='PNG')
+        img_buffer.seek(0)
+        
+        # Display QR code
+        st.image(img_buffer, caption="Scan to access on mobile", width=200)
+        
+        st.markdown("""
+        <div style="text-align: center; margin-top: 1rem;">
+            <p style="font-size: 0.9rem; color: #666;">
+                📱 Scan with your phone's camera or QR code app
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
     
     # Call to Action
     st.markdown("""

@@ -1,299 +1,512 @@
-# 📖 Talent Edge CRM Toolkit - User Guide
+# 📖 User Guide - Cognizant Talent Edge CRM Toolkit
 
-## For CRM Professionals and Business Users
+**Developed by Rahuul Pande (152044), Cognizant**
 
-### Table of Contents
-- [Getting Started](#getting-started)
-- [Dashboard Overview](#dashboard-overview)
-- [Advanced Search & Filtering](#advanced-search--filtering)
-- [Team Builder](#team-builder)
-- [Analytics & Visualizations](#analytics--visualizations)
-- [AI-Powered Queries](#ai-powered-queries)
-- [Report Generation](#report-generation)
-- [Best Practices](#best-practices)
+A comprehensive guide for CRM professionals and business users to maximize the potential of the Talent Edge CRM Toolkit for Swiss banking success.
+
+## 🚀 Getting Started
+
+### **First Time Setup**
+
+1. **Access the Application**
+   - Open your web browser
+   - Navigate to the application URL
+   - For mobile access, scan the QR code on the Introduction page
+
+2. **Mobile Access**
+   - Navigate to the Introduction page
+   - Scan the QR code with your mobile device
+   - Access all features on mobile with responsive design
+
+3. **Navigation Overview**
+   - Use the sidebar navigation to access different features
+   - Each page is optimized for both desktop and mobile
+
+## 📊 Dashboard Overview
+
+### **Executive Summary**
+The dashboard provides real-time insights into your talent pool and Swiss banking capabilities:
+
+- **🏢 Zurich Hub**: 895 associates with 61% immediate availability
+- **🌏 Pune Center**: 490 associates with 58% immediate availability
+- **🤖 AI Specialists**: 247 data scientists and ML engineers
+- **🏦 UBS Ready**: 1,385 specialists for Swiss banking projects
+
+### **Key Metrics**
+- **Total Associates**: Real-time count across all locations
+- **Immediate Availability**: Associates ready for deployment
+- **Swiss Compliance**: FINMA and SNB regulatory expertise
+- **Cost Optimization**: Hybrid delivery model savings
+
+### **Interactive Charts**
+- **Skill Distribution**: Visual breakdown of technical expertise
+- **Geographic Distribution**: Talent spread across delivery centers
+- **Project Readiness**: Swiss banking project capabilities
+- **Growth Trends**: 6-month capacity planning insights
+
+## 🔍 Advanced Talent Search
+
+### **Multi-Dimensional Filtering**
+Use the advanced search to find the perfect candidates:
+
+1. **Skills Filter**
+   - Select from 50+ technical skills
+   - Multiple skill combinations
+   - Experience level requirements
+
+2. **Location Filter**
+   - Zurich, Geneva, Basel (Swiss locations)
+   - Pune, Bangalore, Mumbai (Offshore locations)
+   - Hybrid delivery options
+
+3. **Experience Filter**
+   - Junior (0-3 years)
+   - Mid-level (3-7 years)
+   - Senior (7-10 years)
+   - Expert (10+ years)
+
+4. **Availability Filter**
+   - Immediate deployment
+   - 2-week notice
+   - 1-month notice
+   - Custom timeline
+
+### **Search Results**
+- **Professional Profiles**: Detailed candidate information
+- **Skill Matrix**: Technical expertise breakdown
+- **Availability Status**: Real-time deployment readiness
+- **Cost Information**: Rate cards and budget planning
+
+## 👥 Smart Team Builder
+
+### **Project Requirements**
+Define your project needs:
+
+1. **Project Type**
+   - Core Banking (Avaloq, Temenos)
+   - Digital Banking (Mobile, Web)
+   - Wealth Management (Portfolio systems)
+   - Risk Management (Basel III/IV)
+
+2. **Team Size**
+   - Small (5-10 members)
+   - Medium (10-25 members)
+   - Large (25-50 members)
+   - Enterprise (50+ members)
+
+3. **Budget Constraints**
+   - Cost optimization models
+   - Hybrid delivery options
+   - Swiss vs offshore balance
+
+### **Team Composition**
+The system recommends optimal team structures:
+
+- **Project Manager**: Swiss-based leadership
+- **Tech Lead**: Architecture and design
+- **Senior Developers**: Core development
+- **Developers**: Implementation
+- **QA Engineers**: Quality assurance
+- **DevOps Engineers**: Infrastructure
+
+### **Cost Breakdown**
+- **Monthly Costs**: Detailed budget analysis
+- **Savings**: Hybrid delivery optimization
+- **Timeline**: Project duration planning
+- **ROI**: Return on investment calculations
+
+## 📈 Project Analytics
+
+### **AI-Powered Queries**
+Ask questions in natural language:
+
+**Example Queries:**
+- "Show me all data scientists in Zurich with 5+ years experience"
+- "Find UBS specialists for core banking projects"
+- "Team composition for 6-month digital banking project"
+- "Cost analysis for 20-person hybrid team"
+
+### **Query Results**
+- **Candidate Matches**: AI-recommended profiles
+- **Team Suggestions**: Optimal compositions
+- **Cost Projections**: Budget planning
+- **Timeline Estimates**: Project scheduling
+
+### **Advanced Analytics**
+- **Skill Gap Analysis**: Identify missing capabilities
+- **Cost Optimization**: Budget vs. requirements
+- **Risk Assessment**: Project delivery risks
+- **Performance Metrics**: Historical success rates
+
+## 💼 CRM Tools & Client Management
+
+### **👥 Client Management**
+
+#### **Client Overview**
+Track relationships with key Swiss banking clients:
+
+**UBS Switzerland**
+- Relationship Status: Strategic Partner
+- Engagement Value: $45M annually
+- Key Contacts: 12 decision makers
+- Last Interaction: 2 days ago
+
+**Credit Suisse**
+- Relationship Status: Growth Partner
+- Engagement Value: $28M annually
+- Key Contacts: 8 decision makers
+- Last Interaction: 1 week ago
+
+#### **Recent Activity**
+- Project kickoffs and milestones
+- Proposal submissions
+- Meeting schedules
+- Contract negotiations
+
+### **💰 Deal Pipeline**
+
+#### **Pipeline Overview**
+Monitor $41M in active opportunities:
+
+| Opportunity | Value | Probability | Stage | Expected Close |
+|-------------|-------|-------------|-------|----------------|
+| UBS Digital Banking | $12M | 75% | Proposal | Q1 2024 |
+| CS Risk Platform | $8M | 60% | Discovery | Q2 2024 |
+| UBS Wealth Tech | $15M | 85% | Contract | Q1 2024 |
+| CS Compliance | $6M | 40% | Qualification | Q3 2024 |
+
+#### **Pipeline Analytics**
+- **Value by Stage**: Visual breakdown of deal progression
+- **Win Probability**: Success rate analysis
+- **Revenue Forecasting**: 6-month projections
+- **Resource Allocation**: Team assignment planning
+
+### **📅 Meeting Scheduler**
+
+#### **Schedule New Meeting**
+1. **Meeting Type**
+   - Client Review
+   - Proposal Presentation
+   - Technical Demo
+   - Stakeholder Update
+
+2. **Client Selection**
+   - UBS Switzerland
+   - Credit Suisse
+   - UBS Global
+   - CS Investment Banking
+
+3. **Date and Time**
+   - Calendar integration
+   - Time zone handling
+   - Availability checking
+
+#### **Upcoming Meetings**
+- **Meeting List**: Scheduled appointments
+- **Agenda Management**: Meeting preparation
+- **Follow-up Tracking**: Action item management
+
+### **📧 Email Templates**
+
+#### **Template Types**
+1. **Proposal Follow-up**
+   - UBS Digital Banking proposal
+   - Key highlights and next steps
+   - Professional formatting
+
+2. **Meeting Confirmation**
+   - Agenda and logistics
+   - Participant information
+   - Location details
+
+3. **Project Update**
+   - Weekly status reports
+   - Milestone tracking
+   - Risk and issue management
+
+4. **Stakeholder Report**
+   - Executive summaries
+   - Performance metrics
+   - Strategic recommendations
+
+#### **Template Features**
+- **Professional Formatting**: Swiss banking standards
+- **Customizable Content**: Client-specific information
+- **Copy and Send**: Easy communication workflow
+- **PDF Generation**: Document creation
+
+### **📄 Proposal Templates**
+
+#### **Available Templates**
+1. **Digital Banking (UBS)**
+   - 12-month implementation timeline
+   - 45% cost optimization
+   - Enhanced regulatory compliance
+   - 24/7 support coverage
+
+2. **Core Banking (Credit Suisse)**
+   - Cloud-native architecture
+   - Microservices design
+   - 14-month implementation
+   - CHF 12M annual savings
+
+3. **Wealth Management (UBS)**
+   - AI-powered portfolio optimization
+   - Real-time portfolio tracking
+   - 10-month implementation
+   - CHF 15M annual revenue
+
+4. **Risk Management (Credit Suisse)**
+   - Basel III/IV compliance
+   - Real-time risk monitoring
+   - 9-month implementation
+   - 40% risk reduction
+
+5. **Compliance (Swiss Banking)**
+   - FINMA and SNB requirements
+   - Automated monitoring
+   - 6-month implementation
+   - 99.9% compliance rate
+
+6. **AI/ML Solutions**
+   - Fraud detection algorithms
+   - Customer analytics
+   - 12-month implementation
+   - 400% ROI over 2 years
+
+#### **Template Features**
+- **Copy Template**: Easy text copying
+- **Generate PDF**: Professional document creation
+- **Send to Client**: Direct communication
+- **Customization**: Client-specific modifications
+
+### **📋 Contract Management**
+
+#### **Active Contracts**
+Track CHF 13.2M in active contracts:
+
+**UBS Switzerland**
+- Type: Digital Banking
+- Value: CHF 2.4M
+- Status: Active
+- End Date: 2024-12-31
+
+**Credit Suisse**
+- Type: Core Banking
+- Value: CHF 4.8M
+- Status: Active
+- End Date: 2025-06-30
+
+**UBS Global**
+- Type: Wealth Management
+- Value: CHF 3.2M
+- Status: Pending
+- End Date: 2024-09-30
+
+**CS Investment**
+- Type: Risk Management
+- Value: CHF 2.8M
+- Status: Active
+- End Date: 2025-03-31
+
+#### **Contract Metrics**
+- **Total Contract Value**: CHF 13.2M
+- **Active Contracts**: 3 contracts
+- **Average Contract Value**: CHF 3.3M
+- **Revenue Growth**: 15% vs last quarter
+
+#### **Contract Tools**
+1. **Create New Contract**
+   - Client selection
+   - Contract type (Time & Materials, Fixed Price, Retainer, SLA)
+   - Contract value and duration
+   - Terms and conditions
+
+2. **Contract Analytics**
+   - Monthly revenue tracking
+   - Contract performance metrics
+   - Renewal forecasting
+   - Risk assessment
+
+### **📊 Performance Analytics**
+
+#### **Key Metrics**
+- **Total Pipeline**: $41M (↑ 12% vs last quarter)
+- **Win Rate**: 68% (↑ 5% vs last quarter)
+- **Avg Deal Size**: $10.25M (↑ 8% vs last quarter)
+- **Client Satisfaction**: 4.8/5 (↑ 0.2 vs last quarter)
+
+#### **Performance Charts**
+1. **Revenue Trend**
+   - Monthly revenue tracking
+   - Growth analysis
+   - Forecasting capabilities
+
+2. **Client Distribution**
+   - Revenue by client
+   - Geographic breakdown
+   - Industry analysis
+
+## 📱 Mobile Features
+
+### **QR Code Access**
+1. **Scan QR Code**
+   - Navigate to Introduction page
+   - Scan QR code with mobile device
+   - Access app on mobile browser
+
+2. **Mobile Optimization**
+   - Responsive design for all screen sizes
+   - Touch-friendly interface
+   - Fast loading times
+   - Dark mode support
+
+### **Mobile Features**
+- **Real-time Dashboard**: Key metrics on mobile
+- **Talent Search**: Advanced filtering on mobile
+- **Team Builder**: Mobile-optimized team composition
+- **CRM Tools**: Full client management on mobile
+- **Proposal Templates**: Access templates on mobile
+- **Contract Management**: Track contracts on mobile
+
+## 📊 Advanced Analytics
+
+### **Predictive Analytics**
+- **Talent Demand Forecasting**: Future skill requirements
+- **Cost Optimization Models**: Budget planning
+- **Risk Assessment**: Project delivery risks
+- **Performance Benchmarking**: Industry comparisons
+
+### **Swiss Banking Compliance**
+- **FINMA Requirements**: Regulatory compliance tracking
+- **SNB Standards**: Swiss National Bank requirements
+- **Basel III/IV**: Risk management frameworks
+- **GDPR Compliance**: Data protection standards
+
+## 📄 Report Generation
+
+### **PDF Reports**
+Generate professional reports for client presentations:
+
+1. **Executive Summary**
+   - Key metrics and KPIs
+   - Strategic recommendations
+   - Financial projections
+
+2. **Team Composition**
+   - Detailed team structure
+   - Skill matrix
+   - Cost breakdown
+
+3. **Project Analytics**
+   - Performance metrics
+   - Risk assessment
+   - Timeline tracking
+
+### **Export Options**
+- **PDF Format**: Professional documents
+- **Excel Export**: Data analysis
+- **PowerPoint**: Presentation slides
+- **Word Documents**: Detailed reports
+
+## 🎯 Best Practices
+
+### **Pre-Meeting Preparation**
+1. **Run Talent Queries**
+   - Search for specific skills
+   - Check availability
+   - Generate team compositions
+
+2. **Prepare Reports**
+   - Create PDF summaries
+   - Generate cost projections
+   - Prepare proposal templates
+
+3. **Review Analytics**
+   - Check performance metrics
+   - Analyze trends
+   - Prepare insights
+
+### **During Client Meetings**
+1. **Live Demonstrations**
+   - Show real-time searches
+   - Demonstrate team builder
+   - Display analytics
+
+2. **Interactive Presentations**
+   - Use mobile QR code access
+   - Show responsive design
+   - Demonstrate mobile features
+
+3. **Professional Communication**
+   - Use email templates
+   - Generate proposals
+   - Track contracts
+
+### **Post-Meeting Follow-up**
+1. **Document Decisions**
+   - Update client information
+   - Track action items
+   - Schedule follow-ups
+
+2. **Generate Reports**
+   - Create meeting summaries
+   - Update pipeline
+   - Track opportunities
+
+3. **Plan Next Steps**
+   - Schedule technical demos
+   - Prepare proposals
+   - Plan contract negotiations
+
+## 🔧 Troubleshooting
+
+### **Common Issues**
+
+1. **Mobile Access Problems**
+   - **Solution**: Ensure QR code is clearly visible
+   - **Alternative**: Use direct URL on mobile browser
+   - **Check**: Mobile browser compatibility
+
+2. **Search Not Working**
+   - **Solution**: Clear browser cache
+   - **Check**: Internet connection
+   - **Verify**: All filters are properly set
+
+3. **Report Generation Issues**
+   - **Solution**: Check file permissions
+   - **Alternative**: Use different export format
+   - **Verify**: Sufficient storage space
+
+### **Performance Tips**
+1. **Browser Optimization**
+   - Use Chrome or Safari
+   - Clear cache regularly
+   - Disable unnecessary extensions
+
+2. **Network Optimization**
+   - Use stable internet connection
+   - Avoid public Wi-Fi for sensitive data
+   - Consider VPN for security
+
+3. **Device Optimization**
+   - Keep browser updated
+   - Close unnecessary tabs
+   - Restart browser if needed
+
+## 📞 Support
+
+### **Getting Help**
+- **Documentation**: Check this user guide
+- **Technical Issues**: Contact IT support
+- **Feature Requests**: Submit through feedback form
+- **Training**: Schedule with your manager
+
+### **Contact Information**
+- **Developer**: Rahuul Pande (152044), Cognizant
+- **Support Email**: talentedge@cognizant.com
+- **Emergency**: 24/7 support for critical issues
 
 ---
 
-## Getting Started
-
-### First Login
-1. **Access the application** at http://localhost:8501
-2. **Navigate using the sidebar** - 5 main sections available
-3. **Start with Dashboard** for an executive overview
-4. **Use Project Query** for specific talent searches
-
-### Understanding the Interface
-
-#### Sidebar Navigation
-- **🏠 Dashboard**: Executive overview and key metrics
-- **🔍 Project Query**: Advanced search and team building
-- **📊 Visualizations**: Analytics and business intelligence
-- **📅 Availability**: Resource management and planning
-- **❓ Help**: Documentation and support
-
-#### Key UI Elements
-- **Quick Stats**: Real-time metrics in the sidebar
-- **Filter Dropdowns**: Multi-dimensional search capabilities
-- **Interactive Charts**: Click and hover for detailed insights
-- **Action Buttons**: PDF generation, team building, scheduling
-
----
-
-## Dashboard Overview
-
-### Executive Summary Section
-The dashboard provides immediate insights into:
-
-- **Total talent pool**: 5,340 associates globally
-- **Swiss presence**: 1,380 associates across Zurich, Geneva, Basel
-- **Immediate availability**: Real-time deployment readiness
-- **UBS project readiness**: Specialists prepared for UBS engagements
-
-### Key Metrics Cards
-Each metric card shows:
-- **Current count** with trend indicators
-- **Availability percentage** with progress bars
-- **Hover effects** for additional details
-
-### Team Templates Preview
-- **Pre-configured teams** for major banking projects
-- **Cost estimates** in Swiss Francs (CHF)
-- **Duration projections** for project planning
-- **Skill requirements** summary
-
-### Cost Optimization Models
-- **Hybrid delivery options** (70% Zurich, 30% Offshore)
-- **Savings calculations** compared to pure onsite
-- **Delivery model benefits** and considerations
-
----
-
-## Advanced Search & Filtering
-
-### Using the Project Query Page
-
-#### Step 1: Set Your Filters
-1. **Project Type**: Select from CS Integration, Digital Banking, Core Banking, etc.
-2. **Required Skill**: Choose specific technical skills (Avaloq, Java, Python, etc.)
-3. **Role**: Filter by role type (Architect, Engineer, Analyst, etc.)
-4. **Location**: Select delivery center preference
-
-#### Step 2: Execute Search
-- Click **"🔍 Search Talent"** button
-- Results appear with detailed breakdown
-- **Export options** available (PDF, Excel)
-
-#### Understanding Search Results
-- **Total Associates Found**: Matching your criteria
-- **Available Now**: Ready for immediate deployment
-- **Average Experience**: Years of relevant experience
-- **Availability Rate**: Percentage ready for deployment
-
-### Advanced Filtering Tips
-- **Combine multiple filters** for precise results
-- **Use "All" option** to see broader talent pool
-- **Check Swiss locations first** for client-facing roles
-- **Consider hybrid teams** for cost optimization
-
----
-
-## Team Builder
-
-### Pre-Configured Templates
-
-#### CS Integration Squad (22 members)
-- **Purpose**: Credit Suisse integration projects
-- **Monthly Cost**: CHF 440,000
-- **Duration**: 18-24 months
-- **Key Skills**: Avaloq, Data Migration, FINMA Compliance, German
-
-#### Digital Banking Team (18 members)
-- **Purpose**: Digital transformation initiatives
-- **Monthly Cost**: CHF 360,000
-- **Duration**: 12-18 months
-- **Key Skills**: React, Node.js, AWS, Mobile, API Development
-
-#### Core Banking Modernization (41 members)
-- **Purpose**: Core system upgrades
-- **Monthly Cost**: CHF 820,000
-- **Duration**: 24-36 months
-- **Key Skills**: Java, Oracle, Temenos, Performance Tuning
-
-#### FINMA Compliance Squad (13 members)
-- **Purpose**: Regulatory compliance projects
-- **Monthly Cost**: CHF 260,000
-- **Duration**: 9-12 months
-- **Key Skills**: FINMA Regulations, Basel III, Reporting, SQL
-
-### Using the Team Builder
-1. **Select a template** from the dropdown
-2. **Review team composition** and requirements
-3. **Check cost projections** and timeline
-4. **Click "🚀 Build This Team"** to initiate
-5. **Follow next steps** for deployment
-
-### Custom Team Building
-- **Adjust team size** using sliders
-- **Modify delivery model** for cost optimization
-- **Calculate total project cost** with duration
-- **Compare scenarios** for best ROI
-
----
-
-## Analytics & Visualizations
-
-### Geographic Distribution
-- **Talent spread** across 6 delivery centers
-- **Availability by location** with real-time updates
-- **Swiss hub advantages** vs offshore benefits
-- **Location-specific capabilities** and expertise
-
-### Project Analysis
-- **Skill distribution** across project types
-- **Readiness scores** for different banking initiatives
-- **Risk assessment** by project category
-- **Resource allocation** optimization
-
-### Trend Analysis
-- **6-month growth trends** for key skills
-- **Capacity planning** insights
-- **Market demand** alignment
-- **Strategic workforce** development
-
-### Skill Matrix Heatmap
-- **Real-time availability** by skill and project type
-- **Resource bottlenecks** identification
-- **Capacity planning** support
-- **Strategic hiring** recommendations
-
----
-
-## AI-Powered Queries
-
-### Natural Language Interface
-Type questions in plain English to get instant insights:
-
-#### Example Queries
-- **"CS Integration specialists in Zurich"**
-  - Returns: Specialists count, availability, expertise details
-- **"FINMA compliance experts with German language"**
-  - Returns: Compliance professionals, language skills, client-ready status
-- **"Avaloq developers for UBS project"**
-  - Returns: Avaloq expertise, UBS experience, deployment readiness
-- **"Cost optimization for 25-person hybrid team"**
-  - Returns: Cost models, savings analysis, delivery options
-
-### Query Tips
-- **Be specific** about skills and locations
-- **Mention project context** (UBS, CS Integration, etc.)
-- **Ask about costs** for budget planning
-- **Include language requirements** for Swiss projects
-
-### Understanding AI Responses
-- **Quantitative data**: Exact numbers and percentages
-- **Qualitative insights**: Experience levels and expertise
-- **Actionable recommendations**: Next steps and options
-- **Competitive intelligence**: Market positioning
-
----
-
-## Report Generation
-
-### PDF Reports
-Comprehensive reports include:
-- **Executive summary** with key metrics
-- **Search criteria** and parameters used
-- **Detailed talent breakdown** by role and location
-- **Cost projections** and delivery models
-- **Next steps** and recommendations
-
-### Generating Reports
-1. **Complete your search** with desired filters
-2. **Review results** for accuracy
-3. **Click "📄 Download PDF Report"**
-4. **Customize filename** with timestamp
-5. **Save for client presentations**
-
-### Report Customization
-- **Executive summaries** for C-level presentations
-- **Detailed breakdowns** for project managers
-- **Cost analysis** for financial planning
-- **Technical specifications** for delivery teams
-
----
-
-## Best Practices
-
-### Pre-Meeting Preparation
-1. **Run queries** for client's specific project type
-2. **Generate PDF reports** in advance
-3. **Prepare 3 deployment scenarios** (onsite, hybrid, offshore)
-4. **Test AI insights** with client-specific keywords
-5. **Review cost models** for budget discussions
-
-### During Client Meetings
-1. **Use live queries** to answer real-time questions
-2. **Show availability dashboard** for immediate impact
-3. **Demonstrate team builder** with custom scenarios
-4. **Export reports on-demand** for client handover
-5. **Highlight Swiss capabilities** for local compliance
-
-### Post-Meeting Follow-up
-1. **Generate final reports** with agreed parameters
-2. **Schedule resource allocation** discussions
-3. **Initiate team building** process
-4. **Set up regular updates** on availability
-5. **Track project milestones** for success metrics
-
-### CRM Success Strategies
-
-#### Positioning Swiss Banking Expertise
-- **Emphasize FINMA compliance** and regulatory knowledge
-- **Highlight language capabilities** for client interaction
-- **Showcase UBS experience** and CS integration readiness
-- **Demonstrate cost optimization** without compromising quality
-
-#### Building Client Confidence
-- **Show real-time availability** for immediate credibility
-- **Provide detailed team compositions** for transparency
-- **Offer multiple delivery models** for flexibility
-- **Include success metrics** from similar projects
-
-#### Competitive Differentiation
-- **24/7 support model** with follow-the-sun delivery
-- **Swiss-offshore hybrid** for optimal cost-quality balance
-- **Banking domain expertise** across all major platforms
-- **Rapid deployment capabilities** (24-48 hours)
-
----
-
-## Troubleshooting
-
-### Common Questions
-
-**Q: Why can't I see dropdown values?**
-A: The application includes comprehensive fixes for dropdown visibility. If issues persist, try refreshing the browser or using Chrome/Safari.
-
-**Q: How current is the talent data?**
-A: Data is updated in real-time from our HRMS systems. Last update timestamps are shown in individual profiles.
-
-**Q: Can I save my search preferences?**
-A: Yes, the application remembers your recent searches and filters during your session.
-
-**Q: How accurate are the cost projections?**
-A: Cost models use current rate cards and are updated monthly. For precise quotes, contact the resource management team.
-
-### Getting Support
-- **In-app help**: Click ❓ Help in the sidebar
-- **Email support**: talentedge@cognizant.com
-- **Phone support**: +41 58 123 4567 (Switzerland)
-- **Emergency support**: 24/7 for critical client situations
-
----
-
-**Next Steps**: Ready to use the toolkit? Start with the Dashboard to get familiar with the interface, then move to Project Query for your first talent search.
-
----
-
-*Last updated: January 2025*
-*Version: 2.0* 
+**🎯 Transform your CRM operations with the Cognizant Talent Edge CRM Toolkit!** 

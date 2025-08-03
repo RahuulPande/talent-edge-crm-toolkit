@@ -2,4 +2,6 @@ streamlit
 pandas
 plotly
 reportlab
-matplotlib 
+matplotlib
+qrcode[pil]
+Pillow 

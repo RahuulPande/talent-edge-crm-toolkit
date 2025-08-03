@@ -1,207 +1,141 @@
-# 📝 Changelog
+# 📋 Changelog
 
 All notable changes to the Cognizant Talent Edge CRM Toolkit will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [v2.1.0] - 2025-01-15
 
-## [2.0.0] - 2025-01-27
+### 🆕 Added
+- **📱 Mobile QR Code Feature**: Scan QR code to access app on mobile devices
+- **📄 Proposal Templates**: 6 comprehensive Swiss banking proposal templates
+  - Digital Banking (UBS)
+  - Core Banking (Credit Suisse)
+  - Wealth Management (UBS)
+  - Risk Management (Credit Suisse)
+  - Compliance (Swiss Banking)
+  - AI/ML Solutions
+- **📋 Contract Management**: Complete contract lifecycle management
+  - Active contracts tracking
+  - Contract metrics and analytics
+  - Contract creation tools
+  - Revenue tracking
+- **📱 Mobile Optimization**: Comprehensive mobile responsive design
+  - Responsive design for all screen sizes
+  - Touch-friendly interface (44px minimum targets)
+  - Mobile charts optimization
+  - Dark mode support
+  - Accessibility improvements
+- **👨‍💻 Developer Credit**: Added "Developed by Rahuul Pande (152044), Cognizant"
+- **🏠 Introduction Page**: Comprehensive landing page with app overview
+- **🔍 Advanced Talent Search**: Multi-dimensional filtering and search
+- **👥 Smart Team Builder**: Optimal team composition algorithms
+- **📈 Enhanced Project Query**: AI-powered project analytics
 
-### 🎉 Major Release - Swiss Banking Edition
+### 🔧 Enhanced
+- **💼 CRM Tools**: Expanded to 7 comprehensive tabs
+  - Client Management
+  - Deal Pipeline
+  - Meeting Scheduler
+  - Email Templates
+  - Proposal Templates (NEW)
+  - Contract Management (NEW)
+  - Performance Analytics
+- **📊 Navigation**: Updated navigation structure with new pages
+- **🎨 UI/UX**: Enhanced mobile responsiveness and accessibility
+- **📱 Mobile Features**: All features optimized for mobile access
 
-#### Added
-- **Comprehensive Swiss Banking Data Model** with 2,150+ associate profiles
-- **Pre-configured Team Templates** for CS Integration, Digital Banking, Core Modernization, FINMA Compliance
-- **Advanced Cost Optimization Models** with hybrid delivery options
-- **Enhanced AI-Powered Queries** with Swiss banking context awareness
-- **Multi-language Support** tracking (German, French, Italian, English)
-- **Visa Status Monitoring** for Swiss compliance requirements
-- **Banking Platform Expertise** tracking (Avaloq, Temenos, Murex, etc.)
-- **FINMA Compliance Intelligence** and regulatory tracking
-- **Smart Team Builder** with proven templates and cost projections
-- **Advanced Cost Calculator** with delivery model comparison
-- **Comprehensive Dropdown Visibility Fixes** for all browsers
-- **Executive Dashboard Enhancements** with real-time metrics
-- **PDF Report Generation** with executive summaries
-- **Geographic Distribution Analytics** across 6 delivery centers
-- **Project Readiness Scoring** for banking initiatives
-- **Skill Availability Heatmaps** for resource optimization
-- **6-Month Growth Trend Analysis** for capacity planning
-- **Real-time Availability Tracking** with deployment timeline simulation
-- **Resource Calendar Integration** capabilities
-- **Professional Swiss Banking Theme** with Cognizant branding
+### 🐛 Fixed
+- **🔧 StreamlitDuplicateElementId**: Resolved duplicate element ID errors
+- **📱 Dropdown Visibility**: Enhanced dropdown fixes for all browsers
+- **🎯 Performance**: Optimized for mobile and desktop performance
 
-#### Enhanced
-- **Natural Language Processing** now understands UBS, CS Integration, FINMA queries
-- **Data Generation System** with realistic Swiss banking distributions
-- **Role Hierarchy** expanded to include 40+ banking-specific roles
-- **Skills Taxonomy** comprehensive coverage of banking technologies
-- **Cost Models** with accurate Swiss vs offshore rate calculations
-- **UI Components** with advanced animations and hover effects
-- **Search Functionality** with multi-dimensional filtering
-- **Visualization System** using Plotly for interactive charts
+### 📚 Documentation
+- **📖 README.md**: Complete rewrite with new features
+- **📋 CHANGELOG.md**: Updated with v2.1.0 changes
+- **📱 Mobile Guide**: Added mobile access documentation
 
-#### Fixed
-- **Dropdown Text Visibility** across all browsers and operating systems
-- **Division by Zero Errors** in percentage calculations
-- **CSS Conflicts** between different styling systems
-- **Session State Management** for better user experience
-- **Data Loading Performance** with optimized caching
-- **Memory Usage** optimization for large datasets
+## [v2.0.0] - 2025-01-10
 
-#### Technical Improvements
-- **Enhanced Data Structure** (`enhanced_data_structure.py`) with Swiss banking focus
-- **Comprehensive Error Handling** with detailed troubleshooting
-- **Performance Optimization** with caching strategies
-- **Security Enhancements** with input validation and sanitization
-- **Code Documentation** with complete API reference
-- **Testing Framework** setup with unit and integration tests
+### 🆕 Added
+- **📊 Advanced Analytics Dashboard**: Predictive insights and cost optimization
+- **🏦 Swiss Banking Focus**: UBS and Credit Suisse expertise
+- **📈 Enhanced Data Structure**: Comprehensive Swiss banking dataset
+- **🤖 AI-Powered Queries**: Natural language processing for talent search
+- **📊 Executive Dashboard**: Real-time KPIs and team metrics
+- **📄 PDF Report Generation**: Professional report creation
+- **🎨 Professional UI**: Enhanced styling and animations
 
-### 🛠️ Breaking Changes
-- **Data Model**: Migrated from simple mock data to comprehensive Swiss banking profiles
-- **Function Signatures**: Updated `mock_nlp_response()` to `enhanced_nlp_response()`
-- **Configuration**: New required dependency `enhanced_data_structure.py`
-- **CSS Classes**: Updated styling system with new component classes
+### 🔧 Enhanced
+- **📊 Dashboard**: Executive summary with Swiss banking metrics
+- **🔍 Talent Search**: Multi-dimensional filtering capabilities
+- **📈 Analytics**: Advanced visualizations and insights
+- **📱 Responsive Design**: Mobile and tablet optimization
 
-### 📦 Dependencies
-- **Added**: NumPy for advanced data generation
-- **Updated**: Streamlit to 1.28+ for better performance
-- **Updated**: Pandas to 2.0+ for enhanced data processing
-- **Updated**: Plotly to 5.17+ for improved visualizations
+### 🐛 Fixed
+- **📱 Dropdown Visibility**: Comprehensive CSS and JavaScript fixes
+- **🎯 Performance**: Optimized data loading and caching
+- **📊 Charts**: Enhanced Plotly visualizations
 
-### 🚀 Migration Guide
-To upgrade from v1.0 to v2.0:
+### 📚 Documentation
+- **📖 User Guide**: Comprehensive user documentation
+- **🔧 Technical Reference**: Developer documentation
+- **📋 API Reference**: Function documentation
+- **🚀 Deployment Guide**: Streamlit Cloud deployment
 
-1. **Update Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## [v1.0.0] - 2025-01-05
 
-2. **Add New File**:
-   - Ensure `enhanced_data_structure.py` is in the project root
+### 🆕 Added
+- **🏠 Basic Dashboard**: Initial talent management interface
+- **🔍 Simple Search**: Basic talent search functionality
+- **📊 Basic Analytics**: Simple charts and metrics
+- **📄 Basic Reports**: Simple PDF generation
 
-3. **Update Imports**:
-   - Application automatically imports enhanced data functions
+### 🔧 Enhanced
+- **🎨 UI Design**: Basic Streamlit interface
+- **📱 Basic Responsive**: Simple mobile compatibility
 
-4. **Clear Cache**:
-   ```bash
-   # Clear any cached data
-   rm -rf .streamlit/
-   ```
-
----
-
-## [1.0.0] - 2025-01-15
-
-### 🎉 Initial Release
-
-#### Added
-- **Basic Streamlit Application** with navigation sidebar
-- **Simple Dashboard** with key metrics and visualizations
-- **Project Query System** with basic filtering
-- **PDF Report Generation** using ReportLab
-- **Basic Analytics** with Plotly charts
-- **Help Documentation** system
-- **Mock Data Generation** for demonstration
-- **Basic NLP Query Processing** for talent searches
-- **Cost Calculation** functionality
-- **Responsive UI Design** with CSS styling
-
-#### Features
-- **5-Page Navigation**: Dashboard, Project Query, Visualizations, Availability, Help
-- **Filter System**: Project Type, Skill, Role, Location filtering
-- **Data Visualization**: Pie charts, bar charts, and tables
-- **Export Functionality**: PDF reports for client presentations
-- **Session Management**: Basic state management for user interactions
-
-#### Technical Stack
-- **Frontend**: Streamlit 1.25+
-- **Data Processing**: Pandas 1.5+
-- **Visualizations**: Plotly 5.15+
-- **Reports**: ReportLab 3.6+
-- **Styling**: Custom CSS with professional theme
-
-#### Initial Data Model
-- **Simple Mock Data**: 16 records for demonstration
-- **Basic Skills**: AI, Python, Java, Cybersecurity, Cloud
-- **Simple Locations**: Zurich, Pune
-- **Basic Roles**: Developer, Tester
-- **Project Types**: Integration/Migration, Pega, Mobile Apps, Cards
-
-#### Known Limitations
-- **Limited Data**: Small dataset for proof of concept
-- **Basic NLP**: Simple keyword matching for queries
-- **UI Issues**: Dropdown visibility problems in some browsers
-- **Performance**: No caching or optimization
-- **Security**: Basic input handling
+### 📚 Documentation
+- **📖 Basic README**: Initial project documentation
 
 ---
 
-## [0.9.0] - 2025-01-10 (Beta)
+## 🚀 Upcoming Features
 
-### 🧪 Beta Release
+### Version 2.2 (Planned)
+- [ ] **🔐 Authentication System**: User login and role-based access
+- [ ] **🔔 Real-time Notifications**: Deal updates and alerts
+- [ ] **📱 Mobile App**: Native mobile application
+- [ ] **🤖 Advanced AI**: Machine learning insights
+- [ ] **🔗 API Integrations**: External system connections
+- [ ] **📊 Advanced Reporting**: Custom report builder
+- [ ] **🌍 Multi-language**: German, French, Italian support
+- [ ] **🔒 Enhanced Security**: Advanced security features
 
-#### Added
-- **Core Application Framework** setup
-- **Basic UI Components** and navigation
-- **Initial Data Structures** for talent management
-- **Proof of Concept** functionality
-
-#### Technical
-- **Streamlit Setup**: Basic application configuration
-- **Project Structure**: File organization and dependencies
-- **Development Environment**: Virtual environment setup
-
----
-
-## Upcoming Features (Roadmap)
-
-### [2.1.0] - Q2 2025 (Planned)
-- **Real HRMS Integration** with live data feeds
-- **Advanced Analytics** with machine learning predictions
-- **Mobile Optimization** for tablet and phone access
-- **Multi-tenant Support** for different Cognizant units
-- **Enhanced Security** with SSO integration
-- **API Gateway** for external system integration
-
-### [2.2.0] - Q3 2025 (Planned)
-- **Predictive Analytics** for talent demand forecasting
-- **Automated Team Matching** using AI algorithms
-- **Resource Optimization** recommendations
-- **Advanced Reporting** with custom templates
-- **Integration APIs** for client systems
-- **Performance Monitoring** dashboard
-
-### [3.0.0] - Q4 2025 (Planned)
-- **Cloud Native Architecture** for scalability
-- **Real-time Collaboration** features
-- **Advanced AI Assistant** with conversational interface
-- **Global Talent Network** integration
-- **Compliance Automation** for regulatory requirements
-- **Enterprise Features** for large-scale deployment
+### Version 2.3 (Future)
+- [ ] **📈 Predictive Analytics**: AI-powered forecasting
+- [ ] **🤝 Collaboration Tools**: Team collaboration features
+- [ ] **📊 Business Intelligence**: Advanced BI capabilities
+- [ ] **🔗 Third-party Integrations**: HR systems, CRM platforms
+- [ ] **📱 Progressive Web App**: PWA capabilities
+- [ ] **🔔 Push Notifications**: Real-time alerts
+- [ ] **📊 Custom Dashboards**: User-defined dashboards
+- [ ] **🔒 Enterprise Security**: Advanced enterprise features
 
 ---
 
-## Support
+## 📋 Development Notes
 
-### Version Support Policy
-- **Current Version (2.0.x)**: Full support with regular updates
-- **Previous Version (1.0.x)**: Security fixes only until Q2 2025
-- **Beta Versions**: No longer supported
+### Technical Improvements
+- **Performance**: Optimized for large datasets
+- **Scalability**: Modular architecture for easy expansion
+- **Security**: Enhanced data protection measures
+- **Accessibility**: WCAG 2.1 compliance
 
-### Getting Help
-- **Documentation**: Check `/docs` folder for detailed guides
-- **Issues**: Report bugs via GitHub issues
-- **Support**: Contact talentedge@cognizant.com for enterprise support
-- **Emergency**: 24/7 support available for critical client situations
-
-### Release Schedule
-- **Major Releases**: Quarterly (every 3 months)
-- **Minor Releases**: Monthly for feature additions
-- **Patch Releases**: As needed for bug fixes and security updates
-- **Security Updates**: Immediate for critical vulnerabilities
+### Business Impact
+- **UBS Partnership**: Enhanced Swiss banking capabilities
+- **CRM Excellence**: Improved client relationship management
+- **Talent Management**: Advanced search and team building
+- **Mobile Access**: On-the-go client meetings
 
 ---
 
-**Maintained by**: Cognizant Talent Edge Development Team  
-**Next Release**: v2.1.0 planned for April 2025 
+**Developed by Rahuul Pande (152044), Cognizant** 
