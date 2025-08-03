@@ -805,7 +805,7 @@ with st.sidebar:
     # Navigation with icons
     page = st.radio(
         "Navigate",
-        ["🏠 Dashboard", "🔍 Project Query", "📊 Visualizations", "📅 Availability", "📊 Advanced Analytics", "❓ Help"],
+        ["🏠 Introduction", "📊 Dashboard", "🔍 Talent Search", "👥 Team Builder", "📈 Project Query", "📊 Advanced Analytics", "💼 CRM Tools", "❓ Help"],
         label_visibility="collapsed"
     )
     
@@ -830,8 +830,579 @@ with st.sidebar:
 # Load data
 df = create_mock_data()
 
+def show_introduction_page():
+    """Display the introduction/landing page"""
+    
+    # Hero Section
+    st.markdown("""
+    <div style="text-align: center; padding: 2rem 0;">
+        <h1 style="color: #1f77b4; font-size: 3rem; margin-bottom: 1rem;">🎯 Cognizant Talent Edge CRM Toolkit</h1>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">
+            Your comprehensive solution for Swiss banking talent management and client relationship excellence
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Purpose Section
+    st.markdown("## 🎯 Purpose & Mission")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        ### **For UBS Partnership Success**
+        - **Talent Acquisition**: Find the perfect Swiss banking experts
+        - **Team Optimization**: Build high-performing delivery teams
+        - **Cost Management**: Optimize project budgets and rates
+        - **Compliance**: Ensure regulatory adherence for Swiss banking
+        """)
+    
+    with col2:
+        st.markdown("""
+        ### **For CRM Excellence**
+        - **Client Management**: Track relationships and opportunities
+        - **Pipeline Visibility**: Monitor deal progress and forecasts
+        - **Performance Analytics**: Measure team and project success
+        - **Strategic Insights**: Data-driven decision making
+        """)
+    
+    # Features Overview
+    st.markdown("## 🚀 Key Features")
+    
+    features = [
+        {
+            "icon": "📊",
+            "title": "Executive Dashboard",
+            "description": "Real-time KPIs, team metrics, and Swiss banking insights"
+        },
+        {
+            "icon": "🔍",
+            "title": "Advanced Talent Search",
+            "description": "Multi-dimensional filtering with AI-powered recommendations"
+        },
+        {
+            "icon": "👥",
+            "title": "Smart Team Builder",
+            "description": "Optimal team composition with cost and skill optimization"
+        },
+        {
+            "icon": "📈",
+            "title": "Project Analytics",
+            "description": "Deep insights into project performance and profitability"
+        },
+        {
+            "icon": "🏦",
+            "title": "Swiss Banking Focus",
+            "description": "Specialized expertise for UBS, Credit Suisse, and regulatory compliance"
+        },
+        {
+            "icon": "📊",
+            "title": "Advanced Analytics",
+            "description": "Predictive insights, cost optimization, and compliance metrics"
+        }
+    ]
+    
+    cols = st.columns(3)
+    for i, feature in enumerate(features):
+        with cols[i % 3]:
+            st.markdown(f"""
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                        padding: 1.5rem; border-radius: 10px; margin: 0.5rem 0; color: white;">
+                <h3 style="margin: 0 0 0.5rem 0;">{feature['icon']} {feature['title']}</h3>
+                <p style="margin: 0; opacity: 0.9;">{feature['description']}</p>
+            </div>
+            """, unsafe_allow_html=True)
+    
+    # How to Use Guide
+    st.markdown("## 📖 How to Use This Toolkit")
+    
+    steps = [
+        {
+            "step": "1",
+            "title": "Start with Dashboard",
+            "description": "Review key metrics and team performance overview"
+        },
+        {
+            "step": "2", 
+            "title": "Search for Talent",
+            "description": "Use advanced filters to find specific skills and expertise"
+        },
+        {
+            "step": "3",
+            "title": "Build Your Team",
+            "description": "Create optimal team compositions for your projects"
+        },
+        {
+            "step": "4",
+            "title": "Analyze Projects",
+            "description": "Get insights into project performance and costs"
+        },
+        {
+            "step": "5",
+            "title": "Generate Reports",
+            "description": "Create professional reports for stakeholders"
+        }
+    ]
+    
+    for step in steps:
+        st.markdown(f"""
+        <div style="display: flex; align-items: center; margin: 1rem 0; padding: 1rem; 
+                    background: #f8f9fa; border-radius: 8px; border-left: 4px solid #1f77b4;">
+            <div style="background: #1f77b4; color: white; width: 30px; height: 30px; 
+                        border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+                        margin-right: 1rem; font-weight: bold;">{step['step']}</div>
+            <div>
+                <h4 style="margin: 0 0 0.25rem 0;">{step['title']}</h4>
+                <p style="margin: 0; color: #666;">{step['description']}</p>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Swiss Banking Context
+    st.markdown("## 🏦 Swiss Banking Expertise")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        ### **UBS Integration**
+        - **Regulatory Compliance**: FINMA, SNB requirements
+        - **Risk Management**: Basel III, IV frameworks
+        - **Digital Transformation**: Core banking modernization
+        - **Wealth Management**: Private banking expertise
+        """)
+    
+    with col2:
+        st.markdown("""
+        ### **Credit Suisse Expertise**
+        - **Investment Banking**: M&A, capital markets
+        - **Asset Management**: Portfolio optimization
+        - **Private Banking**: High-net-worth services
+        - **Technology Platforms**: Trading systems, risk engines
+        """)
+    
+    # Call to Action
+    st.markdown("""
+    <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                border-radius: 15px; margin: 2rem 0; color: white;">
+        <h2 style="margin-bottom: 1rem;">Ready to Transform Your CRM Operations?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+            Navigate to any section above to start exploring the toolkit's powerful features
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem;">
+            <button style="background: white; color: #1f77b4; border: none; padding: 0.75rem 1.5rem; 
+                          border-radius: 25px; font-weight: bold; cursor: pointer;">📊 View Dashboard</button>
+            <button style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; 
+                          padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: bold; cursor: pointer;">
+                🔍 Search Talent
+            </button>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+def show_talent_search():
+    """Display advanced talent search functionality"""
+    
+    st.markdown("## 🔍 Advanced Talent Search")
+    
+    # Search filters
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        skill_filter = st.multiselect("Skills", ["Data Analytics", "Cloud Computing", "Cybersecurity", "AI/ML", "Blockchain", "DevOps"])
+        location_filter = st.multiselect("Location", ["Zurich", "Pune", "Bangalore", "Mumbai"])
+    
+    with col2:
+        experience_filter = st.slider("Experience (Years)", 0, 20, (3, 10))
+        availability_filter = st.checkbox("Available Now")
+    
+    with col3:
+        project_type_filter = st.multiselect("Project Type", ["CS Integration", "Core Banking", "Wealth Management", "Risk Management"])
+        certification_filter = st.multiselect("Certifications", ["AWS", "Azure", "GCP", "CISSP", "PMP", "Scrum Master"])
+    
+    # Search button
+    if st.button("🔍 Search Talent", type="primary"):
+        st.success("✅ Found 247 matching candidates!")
+        
+        # Display results
+        st.markdown("### 📊 Search Results")
+        
+        # Mock search results
+        results_data = {
+            "Name": ["Sarah Müller", "Raj Patel", "Elena Rodriguez", "Michael Chen"],
+            "Skills": ["Data Analytics, AI/ML", "Cloud Computing, DevOps", "Cybersecurity, Blockchain", "AI/ML, Data Analytics"],
+            "Experience": ["8 years", "5 years", "12 years", "6 years"],
+            "Location": ["Zurich", "Pune", "Zurich", "Bangalore"],
+            "Availability": ["Immediate", "2 weeks", "Immediate", "1 week"],
+            "Rate": ["CHF 180/hr", "₹8,500/hr", "CHF 200/hr", "₹9,200/hr"]
+        }
+        
+        results_df = pd.DataFrame(results_data)
+        st.dataframe(results_df, use_container_width=True)
+
+def show_team_builder():
+    """Display team builder functionality"""
+    
+    st.markdown("## 👥 Smart Team Builder")
+    
+    # Team requirements
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        project_type = st.selectbox("Project Type", ["Core Banking", "Wealth Management", "Risk Management", "Digital Banking"])
+        team_size = st.slider("Team Size", 5, 50, 15)
+        budget = st.number_input("Budget (CHF)", min_value=100000, max_value=5000000, value=500000, step=50000)
+    
+    with col2:
+        timeline = st.selectbox("Timeline", ["3 months", "6 months", "12 months", "18 months"])
+        expertise_level = st.selectbox("Expertise Level", ["Junior", "Mid-level", "Senior", "Mixed"])
+        location_preference = st.multiselect("Location Preference", ["Zurich", "Pune", "Bangalore", "Mumbai"])
+    
+    # Build team button
+    if st.button("👥 Build Optimal Team", type="primary"):
+        st.success("✅ Team composition optimized!")
+        
+        # Display team composition
+        st.markdown("### 🎯 Recommended Team Composition")
+        
+        team_data = {
+            "Role": ["Project Manager", "Tech Lead", "Senior Developer", "Developer", "QA Engineer", "DevOps Engineer"],
+            "Count": [1, 2, 3, 5, 2, 2],
+            "Experience": ["10+ years", "8+ years", "6+ years", "3+ years", "4+ years", "5+ years"],
+            "Location": ["Zurich", "Zurich", "Pune", "Pune", "Bangalore", "Pune"],
+            "Cost/Month": ["CHF 25,000", "CHF 18,000", "CHF 12,000", "CHF 8,000", "CHF 7,000", "CHF 9,000"]
+        }
+        
+        team_df = pd.DataFrame(team_data)
+        st.dataframe(team_df, use_container_width=True)
+        
+        # Cost breakdown
+        st.markdown("### 💰 Cost Breakdown")
+        total_cost = 25 + 36 + 36 + 40 + 14 + 18  # in thousands
+        st.metric("Total Monthly Cost", f"CHF {total_cost},000", f"Budget: CHF {budget//1000},000")
+        
+        # Progress bar
+        progress = (total_cost * 1000) / budget * 100
+        st.progress(min(progress, 100) / 100)
+
+def show_project_query():
+    """Display project query functionality"""
+    
+    st.markdown("## 📈 Project Query & Analytics")
+    
+    # Query interface
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        query_type = st.selectbox("Query Type", ["Team Availability", "Cost Analysis", "Skill Gap", "Performance Metrics"])
+        project_name = st.text_input("Project Name", "UBS Digital Banking")
+    
+    with col2:
+        date_range = st.date_input("Date Range", value=(datetime.now(), datetime.now()))
+        priority = st.selectbox("Priority", ["Low", "Medium", "High", "Critical"])
+    
+    # Natural language query
+    st.markdown("### 🤖 AI-Powered Query")
+    nl_query = st.text_area("Ask in natural language:", 
+                           placeholder="e.g., 'Show me all available data scientists in Zurich with 5+ years experience for a 6-month project'")
+    
+    if st.button("🔍 Execute Query", type="primary"):
+        if nl_query:
+            # Simulate AI processing
+            with st.spinner("🤖 AI analyzing your query..."):
+                time.sleep(2)
+            
+            st.success("✅ Query executed successfully!")
+            
+            # Display results
+            st.markdown("### 📊 Query Results")
+            
+            # Mock results based on query
+            results = [
+                {"Name": "Dr. Anna Schmidt", "Skills": "Data Science, ML", "Experience": "8 years", "Location": "Zurich", "Availability": "Immediate"},
+                {"Name": "Prof. Raj Kumar", "Skills": "AI/ML, Analytics", "Experience": "12 years", "Location": "Pune", "Availability": "2 weeks"},
+                {"Name": "Elena Petrova", "Skills": "Data Engineering", "Experience": "6 years", "Location": "Zurich", "Availability": "Immediate"}
+            ]
+            
+            for result in results:
+                st.markdown(f"""
+                <div style="padding: 1rem; margin: 0.5rem 0; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #28a745;">
+                    <strong>{result['Name']}</strong> - {result['Skills']}<br>
+                    Experience: {result['Experience']} | Location: {result['Location']} | Available: {result['Availability']}
+                </div>
+                """, unsafe_allow_html=True)
+
+def show_crm_tools():
+    """Display CRM-specific tools and features"""
+    
+    st.markdown("## 💼 CRM Tools & Client Management")
+    
+    # CRM Overview
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                padding: 2rem; border-radius: 15px; color: white; margin-bottom: 2rem;">
+        <h2 style="margin-bottom: 1rem;">🎯 Client Relationship Excellence</h2>
+        <p style="font-size: 1.1rem; opacity: 0.9;">
+            Comprehensive tools for managing UBS partnerships, tracking opportunities, and driving revenue growth
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # CRM Tools Tabs
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(["👥 Client Management", "💰 Deal Pipeline", "📅 Meeting Scheduler", "📧 Email Templates", "📊 Performance Analytics"])
+    
+    with tab1:
+        st.markdown("### 👥 Client Management")
+        
+        # Client Overview
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("""
+            **🏦 UBS Switzerland**
+            - **Relationship Status**: Strategic Partner
+            - **Engagement Value**: $45M annually
+            - **Key Contacts**: 12 decision makers
+            - **Last Interaction**: 2 days ago
+            """)
+            
+            st.markdown("""
+            **🏦 Credit Suisse**
+            - **Relationship Status**: Growth Partner
+            - **Engagement Value**: $28M annually
+            - **Key Contacts**: 8 decision makers
+            - **Last Interaction**: 1 week ago
+            """)
+        
+        with col2:
+            # Client Activity Timeline
+            st.markdown("**📈 Recent Activity**")
+            activities = [
+                {"date": "2024-01-15", "activity": "UBS Core Banking Phase 2 Kickoff", "status": "✅ Completed"},
+                {"date": "2024-01-12", "activity": "CS Risk Engine Upgrade Proposal", "status": "🔄 In Progress"},
+                {"date": "2024-01-10", "activity": "UBS Wealth Management Demo", "status": "✅ Completed"},
+                {"date": "2024-01-08", "activity": "CS Compliance Review Meeting", "status": "📅 Scheduled"}
+            ]
+            
+            for activity in activities:
+                st.markdown(f"""
+                <div style="padding: 0.5rem; margin: 0.25rem 0; background: #f8f9fa; border-radius: 5px;">
+                    <strong>{activity['date']}</strong> - {activity['activity']} <span style="color: #28a745;">{activity['status']}</span>
+                </div>
+                """, unsafe_allow_html=True)
+    
+    with tab2:
+        st.markdown("### 💰 Deal Pipeline")
+        
+        # Pipeline Overview
+        pipeline_data = {
+            "Opportunity": ["UBS Digital Banking", "CS Risk Platform", "UBS Wealth Tech", "CS Compliance"],
+            "Value": ["$12M", "$8M", "$15M", "$6M"],
+            "Probability": ["75%", "60%", "85%", "40%"],
+            "Stage": ["Proposal", "Discovery", "Contract", "Qualification"],
+            "Expected Close": ["Q1 2024", "Q2 2024", "Q1 2024", "Q3 2024"]
+        }
+        
+        pipeline_df = pd.DataFrame(pipeline_data)
+        st.dataframe(pipeline_df, use_container_width=True)
+        
+        # Pipeline Chart
+        fig = go.Figure(data=[
+            go.Bar(x=pipeline_data["Stage"], y=[12, 8, 15, 6], 
+                   text=[f"${v}M" for v in [12, 8, 15, 6]], 
+                   textposition='auto', name="Deal Value")
+        ])
+        fig.update_layout(title="Pipeline Value by Stage", xaxis_title="Stage", yaxis_title="Value ($M)")
+        st.plotly_chart(fig, use_container_width=True)
+    
+    with tab3:
+        st.markdown("### 📅 Meeting Scheduler")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**📅 Schedule New Meeting**")
+            
+            meeting_type = st.selectbox("Meeting Type", ["Client Review", "Proposal Presentation", "Technical Demo", "Stakeholder Update"])
+            client = st.selectbox("Client", ["UBS Switzerland", "Credit Suisse", "UBS Global", "CS Investment Banking"])
+            date = st.date_input("Meeting Date")
+            time = st.time_input("Meeting Time")
+            
+            if st.button("📅 Schedule Meeting"):
+                st.success(f"✅ Meeting scheduled with {client} on {date} at {time}")
+        
+        with col2:
+            st.markdown("**📋 Upcoming Meetings**")
+            
+            meetings = [
+                {"client": "UBS Switzerland", "type": "Proposal Presentation", "date": "2024-01-20", "time": "10:00 AM"},
+                {"client": "Credit Suisse", "type": "Technical Demo", "date": "2024-01-22", "time": "2:00 PM"},
+                {"client": "UBS Global", "type": "Client Review", "date": "2024-01-25", "time": "11:00 AM"}
+            ]
+            
+            for meeting in meetings:
+                st.markdown(f"""
+                <div style="padding: 1rem; margin: 0.5rem 0; background: #e3f2fd; border-radius: 8px; border-left: 4px solid #2196f3;">
+                    <strong>{meeting['client']}</strong><br>
+                    {meeting['type']} - {meeting['date']} at {meeting['time']}
+                </div>
+                """, unsafe_allow_html=True)
+    
+    with tab4:
+        st.markdown("### 📧 Email Templates")
+        
+        template_type = st.selectbox("Select Template Type", ["Proposal Follow-up", "Meeting Confirmation", "Project Update", "Stakeholder Report"])
+        
+        templates = {
+            "Proposal Follow-up": """
+            Subject: UBS Digital Banking Proposal - Next Steps
+            
+            Dear [Client Name],
+            
+            Thank you for the opportunity to present our Digital Banking solution for UBS. 
+            We're excited about the potential partnership and ready to move forward with the implementation.
+            
+            Key highlights from our proposal:
+            • 12-month implementation timeline
+            • 45% cost optimization
+            • Enhanced regulatory compliance
+            • 24/7 support coverage
+            
+            Next steps:
+            1. Technical deep-dive session
+            2. Contract finalization
+            3. Project kickoff planning
+            
+            Best regards,
+            [Your Name]
+            Cognizant Switzerland
+            """,
+            
+            "Meeting Confirmation": """
+            Subject: Meeting Confirmation - [Meeting Type]
+            
+            Dear [Client Name],
+            
+            This confirms our meeting scheduled for [Date] at [Time].
+            
+            Agenda:
+            • Project status review
+            • Next phase planning
+            • Risk assessment
+            • Q&A session
+            
+            Location: [Meeting Location/Teams Link]
+            
+            Please let us know if you need any adjustments.
+            
+            Best regards,
+            [Your Name]
+            """,
+            
+            "Project Update": """
+            Subject: Project Update - [Project Name]
+            
+            Dear [Client Name],
+            
+            Here's our weekly project update:
+            
+            ✅ Completed This Week:
+            • [Task 1]
+            • [Task 2]
+            
+            🔄 In Progress:
+            • [Task 3]
+            • [Task 4]
+            
+            📅 Next Week:
+            • [Task 5]
+            • [Task 6]
+            
+            Risks/Issues: [If any]
+            
+            Best regards,
+            [Your Name]
+            """,
+            
+            "Stakeholder Report": """
+            Subject: Monthly Stakeholder Report - [Project Name]
+            
+            Dear [Stakeholder Name],
+            
+            Please find attached our monthly stakeholder report for [Project Name].
+            
+            Executive Summary:
+            • Project is 75% complete
+            • On track for March 2024 delivery
+            • Budget utilization: 68%
+            • Risk level: Low
+            
+            Key Achievements:
+            • [Achievement 1]
+            • [Achievement 2]
+            
+            Next Month Focus:
+            • [Focus Area 1]
+            • [Focus Area 2]
+            
+            Best regards,
+            [Your Name]
+            """
+        }
+        
+        st.text_area("Email Template", templates.get(template_type, ""), height=300)
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("📋 Copy Template"):
+                st.success("✅ Template copied to clipboard!")
+        with col2:
+            if st.button("📧 Send Email"):
+                st.success("✅ Email sent successfully!")
+    
+    with tab5:
+        st.markdown("### 📊 Performance Analytics")
+        
+        # CRM Performance Metrics
+        col1, col2, col3, col4 = st.columns(4)
+        
+        with col1:
+            st.metric("Total Pipeline", "$41M", "↑ 12% vs last quarter")
+        
+        with col2:
+            st.metric("Win Rate", "68%", "↑ 5% vs last quarter")
+        
+        with col3:
+            st.metric("Avg Deal Size", "$10.25M", "↑ 8% vs last quarter")
+        
+        with col4:
+            st.metric("Client Satisfaction", "4.8/5", "↑ 0.2 vs last quarter")
+        
+        # Performance Charts
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            # Revenue Trend
+            months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+            revenue = [8.2, 9.1, 10.5, 11.2, 12.8, 13.5]
+            
+            fig = go.Figure(data=go.Scatter(x=months, y=revenue, mode='lines+markers', 
+                                           line=dict(color='#1f77b4', width=3)))
+            fig.update_layout(title="Revenue Trend ($M)", xaxis_title="Month", yaxis_title="Revenue")
+            st.plotly_chart(fig, use_container_width=True)
+        
+        with col2:
+            # Client Distribution
+            clients = ['UBS Switzerland', 'Credit Suisse', 'UBS Global', 'CS Investment']
+            values = [45, 28, 15, 12]
+            
+            fig = go.Figure(data=[go.Pie(labels=clients, values=values, hole=0.4)])
+            fig.update_layout(title="Revenue Distribution by Client")
+            st.plotly_chart(fig, use_container_width=True)
+
 # Main content based on selected page
-if page == "🏠 Dashboard":
+if page == "🏠 Introduction":
+    show_introduction_page()
+elif page == "📊 Dashboard":
     # Executive Summary at the top
     st.markdown("""
     <div class="executive-summary">
@@ -1702,12 +2273,19 @@ elif page == "📅 Availability":
         - UBS Project Dashboard: ✅ Updated
         """)
 
+elif page == "🔍 Talent Search":
+    show_talent_search()
+elif page == "👥 Team Builder":
+    show_team_builder()
+elif page == "📈 Project Query":
+    show_project_query()
 elif page == "📊 Advanced Analytics":
     # Import and use the advanced analytics module
     from enhanced_data_structure import create_streamlit_dataset
     advanced_df = create_streamlit_dataset()
     show_advanced_analytics(advanced_df)
-
+elif page == "💼 CRM Tools":
+    show_crm_tools()
 elif page == "❓ Help":
     st.markdown("### ❓ Help & User Guide")
     
