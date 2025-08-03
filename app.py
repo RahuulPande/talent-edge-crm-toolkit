@@ -168,6 +168,65 @@ dropdown_style_fix = """
     .stSelectbox [style*="color: #ffffff"] {
         color: black !important;
     }
+    
+    /* SIDEBAR NAVIGATION FIXES - Ensure sidebar text is readable */
+    .css-1d391kg, .css-1lcbmhc, .css-1wivap2 {
+        color: white !important;
+        background-color: transparent !important;
+    }
+    
+    /* Sidebar navigation items */
+    .css-1d391kg .css-1lcbmhc,
+    .css-1d391kg .css-1wivap2,
+    .css-1d391kg [data-testid="stSidebarNav"] * {
+        color: white !important;
+        background-color: transparent !important;
+    }
+    
+    /* Sidebar text elements */
+    .css-1d391kg p,
+    .css-1d391kg span,
+    .css-1d391kg div,
+    .css-1d391kg label {
+        color: white !important;
+        background-color: transparent !important;
+    }
+    
+    /* Sidebar navigation links */
+    .css-1d391kg a,
+    .css-1d391kg [data-testid="stSidebarNav"] a {
+        color: white !important;
+        background-color: transparent !important;
+    }
+    
+    /* Sidebar navigation items on hover */
+    .css-1d391kg [data-testid="stSidebarNav"] *:hover {
+        color: #f0f0f0 !important;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    /* Sidebar active navigation item */
+    .css-1d391kg [data-testid="stSidebarNav"] .css-1wivap2[aria-selected="true"] {
+        color: white !important;
+        background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    /* Ensure sidebar icons are visible */
+    .css-1d391kg svg {
+        color: white !important;
+        fill: white !important;
+    }
+    
+    /* Sidebar section headers */
+    .css-1d391kg h1,
+    .css-1d391kg h2,
+    .css-1d391kg h3,
+    .css-1d391kg h4,
+    .css-1d391kg h5,
+    .css-1d391kg h6 {
+        color: white !important;
+        background-color: transparent !important;
+    }
 </style>
 """
 
@@ -253,6 +312,47 @@ js_fix = """
     
     // Run periodically to catch any missed elements
     setInterval(fixDropdownVisibility, 2000);
+    
+    // Fix sidebar navigation visibility
+    function fixSidebarNavigation() {
+        // Fix sidebar navigation text
+        const sidebarElements = document.querySelectorAll('.css-1d391kg *');
+        sidebarElements.forEach(element => {
+            if (element.textContent && element.textContent.trim() !== '') {
+                element.style.color = 'white';
+                element.style.backgroundColor = 'transparent';
+            }
+        });
+        
+        // Fix sidebar navigation links
+        const sidebarLinks = document.querySelectorAll('.css-1d391kg a, [data-testid="stSidebarNav"] a');
+        sidebarLinks.forEach(link => {
+            link.style.color = 'white';
+            link.style.backgroundColor = 'transparent';
+        });
+        
+        // Fix sidebar icons
+        const sidebarIcons = document.querySelectorAll('.css-1d391kg svg');
+        sidebarIcons.forEach(icon => {
+            icon.style.color = 'white';
+            icon.style.fill = 'white';
+        });
+        
+        // Fix sidebar navigation items
+        const navItems = document.querySelectorAll('[data-testid="stSidebarNav"] *');
+        navItems.forEach(item => {
+            if (item.textContent && item.textContent.trim() !== '') {
+                item.style.color = 'white';
+                item.style.backgroundColor = 'transparent';
+            }
+        });
+    }
+    
+    // Run sidebar fix initially
+    setTimeout(fixSidebarNavigation, 100);
+    
+    // Run sidebar fix periodically
+    setInterval(fixSidebarNavigation, 1000);
 </script>
 """
 
