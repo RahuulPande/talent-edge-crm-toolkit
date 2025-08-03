@@ -233,3 +233,4 @@ exports/
 !docs/
 !enhanced_data_structure.py
 !app.py 
+.vercel
