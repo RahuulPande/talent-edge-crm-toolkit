@@ -30,7 +30,7 @@ dropdown_style_fix = """
     
     /* Main container fix */
     .stSelectbox > div > div {
-        background-color: white !important;
+        background-color: #f8f9fa !important;
     }
     
     /* The input field that shows selected value */
@@ -38,6 +38,7 @@ dropdown_style_fix = """
         color: black !important;
         -webkit-text-fill-color: black !important;
         opacity: 1 !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Alternative selector for the displayed value */
@@ -45,60 +46,71 @@ dropdown_style_fix = """
         color: black !important;
         -webkit-text-fill-color: black !important;
         opacity: 1 !important;
+        background-color: #f8f9fa !important;
     }
     
     /* The actual value container */
     div[data-baseweb="select"] [class*="valueContainer"] {
         color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Single value display */
     div[data-baseweb="select"] [class*="singleValue"] {
         color: black !important;
         opacity: 1 !important;
+        background-color: #f8f9fa !important;
     }
     
     /* For the placeholder text */
     div[data-baseweb="select"] [class*="placeholder"] {
         color: #666666 !important;
         opacity: 1 !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Target the specific baseweb classes */
     [class*="css"][class*="singleValue"] {
         color: black !important;
         -webkit-text-fill-color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Override any inherited styles */
     .stSelectbox * {
         color: inherit !important;
+        background-color: #f8f9fa !important;
     }
     
     .stSelectbox [data-baseweb="select"] * {
         -webkit-text-fill-color: initial !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Ensure text is visible in all states */
     .stSelectbox [data-baseweb="select"]:not([data-baseweb="popover"]) {
         color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Target the input specifically */
     .stSelectbox input[aria-autocomplete="list"] {
         color: black !important;
         -webkit-text-fill-color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     /* For any div containing the selected text */
     .stSelectbox [data-baseweb="select"] > div:first-child > div:first-child {
         color: black !important;
         -webkit-text-fill-color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Additional fix for nested divs */
     .stSelectbox [data-baseweb="select"] div[style*="color"] {
         color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Override inline styles */
@@ -120,24 +132,29 @@ dropdown_style_fix = """
     /* Enhanced fixes for Safari and Chrome */
     .stSelectbox [data-baseweb="select"] div[role="combobox"] {
         color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     .stSelectbox [data-baseweb="select"] div[aria-expanded] {
         color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Fix for radio buttons in sidebar */
     .stSidebar .stRadio > label {
         color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     .stSidebar .stRadio > div[role="radiogroup"] > label {
         color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Fix for multiselect */
     .stMultiSelect [data-baseweb="select"] {
         color: black !important;
+        background-color: #f8f9fa !important;
     }
     
     /* Force all text in selectboxes to be black */
@@ -164,6 +181,7 @@ js_fix = """
         selectInputs.forEach(input => {
             input.style.color = 'black';
             input.style.webkitTextFillColor = 'black';
+            input.style.backgroundColor = '#f8f9fa';
         });
         
         // Find all value containers
@@ -171,6 +189,7 @@ js_fix = """
         valueContainers.forEach(container => {
             container.style.color = 'black';
             container.style.webkitTextFillColor = 'black';
+            container.style.backgroundColor = '#f8f9fa';
         });
         
         // Find any element that might contain the selected value
@@ -179,6 +198,7 @@ js_fix = """
             if (div.textContent && !div.querySelector('input')) {
                 div.style.color = 'black';
                 div.style.webkitTextFillColor = 'black';
+                div.style.backgroundColor = '#f8f9fa';
             }
         });
         
@@ -188,6 +208,7 @@ js_fix = """
             if (element.textContent && element.textContent.trim() !== '') {
                 element.style.color = 'black';
                 element.style.webkitTextFillColor = 'black';
+                element.style.backgroundColor = '#f8f9fa';
             }
         });
         
@@ -203,6 +224,7 @@ js_fix = """
             if (element.textContent && element.textContent.trim() !== '') {
                 element.style.color = 'black';
                 element.style.webkitTextFillColor = 'black';
+                element.style.backgroundColor = '#f8f9fa';
             }
         });
     }
@@ -1174,9 +1196,27 @@ def show_introduction_page():
             img = qr.make_image(fill_color="black", back_color="white")
             return img
         
-        # Get current URL - for production, this should be the Streamlit Cloud URL
-        # For local development, you can change this to your actual Streamlit Cloud URL
-        current_url = "https://talent-edge-crm-toolkit.streamlit.app"  # Replace with your actual Streamlit Cloud URL
+        # Get current URL - for production, use Streamlit Cloud URL
+        # For local development, use local network IP
+        import socket
+        import os
+        
+        # Check if running on Streamlit Cloud
+        if os.environ.get('STREAMLIT_SERVER_PORT') == '8501' and os.environ.get('STREAMLIT_SERVER_ADDRESS') == '0.0.0.0':
+            # We're on Streamlit Cloud - use the public URL
+            current_url = "https://talent-edge-crm-toolkit-eruzl4qtztizpskyggz3tv.streamlit.app"
+        else:
+            # Local development - use local network IP
+            try:
+                # Get local IP address
+                s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                s.connect(("8.8.8.8", 80))
+                local_ip = s.getsockname()[0]
+                s.close()
+                current_url = f"http://{local_ip}:8501"
+            except:
+                # Fallback to localhost if network detection fails
+                current_url = "http://localhost:8501"
         qr_img = generate_qr_code(current_url)
         
         # Convert PIL image to bytes
@@ -1186,6 +1226,10 @@ def show_introduction_page():
         
         # Display QR code
         st.image(img_buffer, caption="Scan to access on mobile", width=200)
+        
+        # Show the actual URL for manual access
+        st.info(f"📱 **Mobile Access URL:** `{current_url}`")
+        st.info("💡 **Make sure your phone is on the same WiFi network as this computer**")
         
         st.markdown("""
         <div style="text-align: center; margin-top: 1rem;">
