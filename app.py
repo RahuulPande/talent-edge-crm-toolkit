@@ -1196,27 +1196,9 @@ def show_introduction_page():
             img = qr.make_image(fill_color="black", back_color="white")
             return img
         
-        # Get current URL - for production, use Streamlit Cloud URL
-        # For local development, use local network IP
-        import socket
-        import os
-        
-        # Check if running on Streamlit Cloud
-        if os.environ.get('STREAMLIT_SERVER_PORT') == '8501' and os.environ.get('STREAMLIT_SERVER_ADDRESS') == '0.0.0.0':
-            # We're on Streamlit Cloud - use the public URL
-            current_url = "https://talent-edge-crm-toolkit-eruzl4qtztizpskyggz3tv.streamlit.app"
-        else:
-            # Local development - use local network IP
-            try:
-                # Get local IP address
-                s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                s.connect(("8.8.8.8", 80))
-                local_ip = s.getsockname()[0]
-                s.close()
-                current_url = f"http://{local_ip}:8501"
-            except:
-                # Fallback to localhost if network detection fails
-                current_url = "http://localhost:8501"
+        # Use Streamlit Cloud URL for universal mobile access
+        # This ensures the QR code works for anyone who scans it
+        current_url = "https://talent-edge-crm-toolkit-eruzl4qtztizpskyggz3tv.streamlit.app"
         qr_img = generate_qr_code(current_url)
         
         # Convert PIL image to bytes
@@ -1228,8 +1210,8 @@ def show_introduction_page():
         st.image(img_buffer, caption="Scan to access on mobile", width=200)
         
         # Show the actual URL for manual access
-        st.info(f"📱 **Mobile Access URL:** `{current_url}`")
-        st.info("💡 **Make sure your phone is on the same WiFi network as this computer**")
+        st.info(f"📱 **Universal Mobile Access URL:** `{current_url}`")
+        st.info("🌐 **This QR code works for anyone - no WiFi restrictions!**")
         
         st.markdown("""
         <div style="text-align: center; margin-top: 1rem;">
