@@ -118,21 +118,27 @@ def show_cost_optimization(df):
     
     st.markdown("### 💰 Cost Optimization Insights")
     
-    # Calculate cost optimization metrics
-    current_avg_rate = df['rate_per_hour'].mean()
-    zurich_avg_rate = df[df['location'] == 'Zurich']['rate_per_hour'].mean()
-    pune_avg_rate = df[df['location'] == 'Pune']['rate_per_hour'].mean()
+    # Calculate cost optimization metrics based on experience years and location
+    # Simulate rates based on experience and location
+    df['simulated_rate'] = df['Experience_Years'] * 50 + np.random.normal(0, 20, len(df))
+    df.loc[df['Location'] == 'Zurich', 'simulated_rate'] *= 1.8  # Zurich premium
+    df.loc[df['Location'] == 'Pune', 'simulated_rate'] *= 0.6    # Pune discount
+    
+    current_avg_rate = df['simulated_rate'].mean()
+    zurich_avg_rate = df[df['Location'] == 'Zurich']['simulated_rate'].mean()
+    pune_avg_rate = df[df['Location'] == 'Pune']['simulated_rate'].mean()
     
     # Cost savings potential
     savings_per_hour = zurich_avg_rate - pune_avg_rate
     annual_savings = savings_per_hour * 8 * 220  # 8 hours/day, 220 working days
     
     # Create cost comparison chart
-    locations = ['Zurich', 'Pune', 'Bangalore', 'Mumbai']
+    locations = ['Zurich', 'Pune', 'Bangalore', 'Chennai']
     avg_rates = [
-        df[df['location'] == loc]['rate_per_hour'].mean() 
-        for loc in locations
+        df[df['Location'] == loc]['simulated_rate'].mean() 
+        for loc in locations if len(df[df['Location'] == loc]) > 0
     ]
+    locations = [loc for loc in locations if len(df[df['Location'] == loc]) > 0]
     
     fig = px.bar(
         x=locations,
@@ -175,9 +181,9 @@ def show_cost_optimization(df):
         
         # Create pie chart for cost distribution
         cost_data = {
-            'Zurich Associates': len(df[df['location'] == 'Zurich']) * zurich_avg_rate * 8 * 220,
-            'Pune Associates': len(df[df['location'] == 'Pune']) * pune_avg_rate * 8 * 220,
-            'Other Locations': len(df[~df['location'].isin(['Zurich', 'Pune'])]) * current_avg_rate * 8 * 220
+            'Zurich Associates': len(df[df['Location'] == 'Zurich']) * zurich_avg_rate * 8 * 220,
+            'Pune Associates': len(df[df['Location'] == 'Pune']) * pune_avg_rate * 8 * 220,
+            'Other Locations': len(df[~df['Location'].isin(['Zurich', 'Pune'])]) * current_avg_rate * 8 * 220
         }
         
         fig = px.pie(
@@ -248,14 +254,14 @@ def show_compliance_metrics(df):
     with col2:
         st.markdown("#### 🔍 Regulatory Insights")
         
-        # Certification distribution
-        cert_data = df['certifications'].value_counts().sort_index()
+        # Experience distribution (using Experience_Years instead of certifications)
+        exp_data = df['Experience_Years'].value_counts().sort_index()
         
         fig = px.bar(
-            x=cert_data.index,
-            y=cert_data.values,
-            title='Professional Certifications Distribution',
-            labels={'x': 'Number of Certifications', 'y': 'Number of Associates'}
+            x=exp_data.index,
+            y=exp_data.values,
+            title='Experience Years Distribution',
+            labels={'x': 'Years of Experience', 'y': 'Number of Associates'}
         )
         
         st.plotly_chart(fig, use_container_width=True)
@@ -266,10 +272,10 @@ def show_performance_insights(df):
     st.markdown("### 📈 Performance Insights")
     
     # Performance metrics by location
-    performance_metrics = df.groupby('location').agg({
-        'experience_years': 'mean',
-        'rate_per_hour': 'mean',
-        'certifications': 'mean'
+    performance_metrics = df.groupby('Location').agg({
+        'Experience_Years': 'mean',
+        'simulated_rate': 'mean',
+        'Count': 'sum'
     }).round(2)
     
     # Performance heatmap
@@ -293,17 +299,17 @@ def show_performance_insights(df):
     with col1:
         st.markdown("#### 🎯 Top Performers")
         
-        # Top 5 by experience and certifications
-        top_performers = df.nlargest(5, ['experience_years', 'certifications'])
+        # Top 5 by experience and count
+        top_performers = df.nlargest(5, ['Experience_Years', 'Count'])
         
         fig = px.scatter(
             top_performers,
-            x='experience_years',
-            y='certifications',
-            size='rate_per_hour',
-            color='location',
-            hover_data=['name'],
-            title='Top Performers by Experience & Certifications'
+            x='Experience_Years',
+            y='Count',
+            size='simulated_rate',
+            color='Location',
+            hover_data=['Role'],
+            title='Top Performers by Experience & Team Size'
         )
         
         st.plotly_chart(fig, use_container_width=True)
@@ -312,12 +318,12 @@ def show_performance_insights(df):
         st.markdown("#### 📊 Skill Distribution")
         
         # Skill distribution
-        skill_dist = df['primary_skill'].value_counts()
+        skill_dist = df['Skill'].value_counts()
         
         fig = px.pie(
             values=skill_dist.values,
             names=skill_dist.index,
-            title='Primary Skills Distribution'
+            title='Skills Distribution'
         )
         
         st.plotly_chart(fig, use_container_width=True)
@@ -330,21 +336,21 @@ def show_performance_insights(df):
     with col1:
         st.metric(
             "Avg Experience", 
-            f"{df['experience_years'].mean():.1f} years",
+            f"{df['Experience_Years'].mean():.1f} years",
             f"Target: 8+ years for Swiss banking"
         )
     
     with col2:
         st.metric(
-            "Avg Certifications", 
-            f"{df['certifications'].mean():.1f}",
-            f"Target: 2+ certifications"
+            "Avg Team Size", 
+            f"{df['Count'].mean():.1f}",
+            f"Per role/location"
         )
     
     with col3:
         st.metric(
             "High Performers", 
-            f"{len(df[df['experience_years'] >= 8])}",
+            f"{len(df[df['Experience_Years'] >= 8])}",
             f"Out of {len(df)} total"
         )
 
