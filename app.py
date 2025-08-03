@@ -114,6 +114,41 @@ dropdown_style_fix = """
         background-color: #f0f7ff !important;
         color: #0072C6 !important;
     }
+    
+    /* Enhanced fixes for Safari and Chrome */
+    .stSelectbox [data-baseweb="select"] div[role="combobox"] {
+        color: black !important;
+    }
+    
+    .stSelectbox [data-baseweb="select"] div[aria-expanded] {
+        color: black !important;
+    }
+    
+    /* Fix for radio buttons in sidebar */
+    .stSidebar .stRadio > label {
+        color: black !important;
+    }
+    
+    .stSidebar .stRadio > div[role="radiogroup"] > label {
+        color: black !important;
+    }
+    
+    /* Fix for multiselect */
+    .stMultiSelect [data-baseweb="select"] {
+        color: black !important;
+    }
+    
+    /* Force all text in selectboxes to be black */
+    .stSelectbox * {
+        color: black !important;
+    }
+    
+    /* Override any white text */
+    .stSelectbox [style*="color: white"],
+    .stSelectbox [style*="color: rgb(255, 255, 255)"],
+    .stSelectbox [style*="color: #ffffff"] {
+        color: black !important;
+    }
 </style>
 """
 
@@ -144,6 +179,30 @@ js_fix = """
                 div.style.webkitTextFillColor = 'black';
             }
         });
+        
+        // Enhanced fix for all dropdown elements
+        const allDropdownElements = document.querySelectorAll('.stSelectbox [data-baseweb="select"] *');
+        allDropdownElements.forEach(element => {
+            if (element.textContent && element.textContent.trim() !== '') {
+                element.style.color = 'black';
+                element.style.webkitTextFillColor = 'black';
+            }
+        });
+        
+        // Fix for radio buttons in sidebar
+        const radioLabels = document.querySelectorAll('.stSidebar .stRadio label');
+        radioLabels.forEach(label => {
+            label.style.color = 'black';
+        });
+        
+        // Fix for multiselect elements
+        const multiSelectElements = document.querySelectorAll('.stMultiSelect [data-baseweb="select"] *');
+        multiSelectElements.forEach(element => {
+            if (element.textContent && element.textContent.trim() !== '') {
+                element.style.color = 'black';
+                element.style.webkitTextFillColor = 'black';
+            }
+        });
     }
     
     // Run the fix initially
@@ -162,6 +221,14 @@ js_fix = """
     document.addEventListener('click', () => {
         setTimeout(fixDropdownVisibility, 50);
     });
+    
+    // Run on focus events
+    document.addEventListener('focusin', () => {
+        setTimeout(fixDropdownVisibility, 25);
+    });
+    
+    // Run periodically to catch any missed elements
+    setInterval(fixDropdownVisibility, 2000);
 </script>
 """
 
