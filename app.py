@@ -626,6 +626,154 @@ st.markdown("""
     @keyframes fillProgress {
         from { width: 0; }
     }
+    
+    /* Mobile responsive design */
+    @media (max-width: 768px) {
+        /* Adjust main container */
+        .main .block-container {
+            padding: 1rem 0.5rem;
+        }
+        
+        /* Responsive columns */
+        .stColumns > div {
+            margin-bottom: 1rem;
+        }
+        
+        /* Adjust metric cards */
+        .metric-container {
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+        }
+        
+        /* Responsive text */
+        h1 {
+            font-size: 1.8rem !important;
+        }
+        
+        h2 {
+            font-size: 1.4rem !important;
+        }
+        
+        h3 {
+            font-size: 1.2rem !important;
+        }
+        
+        /* Mobile-friendly buttons */
+        .stButton > button {
+            width: 100%;
+            margin: 0.25rem 0;
+            padding: 0.75rem;
+            font-size: 1rem;
+        }
+        
+        /* Responsive tables */
+        .stDataFrame {
+            font-size: 0.8rem;
+        }
+        
+        /* Mobile sidebar */
+        .css-1d391kg {
+            width: 100% !important;
+        }
+        
+        /* Touch-friendly inputs */
+        .stSelectbox, .stTextInput, .stNumberInput {
+            margin: 0.5rem 0;
+        }
+        
+        /* Mobile charts */
+        .js-plotly-plot {
+            height: 300px !important;
+        }
+        
+        /* Responsive cards */
+        .stat-card {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+        }
+        
+        /* Mobile navigation */
+        .stRadio > label {
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+        }
+        
+        /* Touch targets */
+        .stButton, .stSelectbox, .stTextInput {
+            min-height: 44px;
+        }
+        
+        /* Mobile tabs */
+        .stTabs [data-baseweb="tab-list"] {
+            flex-wrap: wrap;
+        }
+        
+        .stTabs [data-baseweb="tab"] {
+            min-width: 120px;
+            padding: 0.5rem;
+        }
+    }
+    
+    /* Tablet optimization */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .main .block-container {
+            padding: 1.5rem;
+        }
+        
+        h1 {
+            font-size: 2.2rem !important;
+        }
+        
+        .stColumns > div {
+            margin-bottom: 1rem;
+        }
+    }
+    
+    /* High DPI displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .stButton > button {
+            border-radius: 8px;
+        }
+        
+        .stat-card {
+            border-radius: 12px;
+        }
+    }
+    
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        .stat-card {
+            background: #2d3748;
+            color: white;
+        }
+        
+        .info-box {
+            background: #2d3748;
+            color: white;
+        }
+    }
+    
+    /* Accessibility improvements */
+    .stButton > button:focus,
+    .stSelectbox > div:focus,
+    .stTextInput > div:focus {
+        outline: 2px solid #0072C6;
+        outline-offset: 2px;
+    }
+    
+    /* Loading states */
+    .stSpinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+    
+    /* Success/error messages */
+    .stAlert {
+        border-radius: 8px;
+        margin: 0.5rem 0;
+    }
 </style>
 
 """, unsafe_allow_html=True)
@@ -837,8 +985,11 @@ def show_introduction_page():
     st.markdown("""
     <div style="text-align: center; padding: 2rem 0;">
         <h1 style="color: #1f77b4; font-size: 3rem; margin-bottom: 1rem;">🎯 Cognizant Talent Edge CRM Toolkit</h1>
-        <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 1rem;">
             Your comprehensive solution for Swiss banking talent management and client relationship excellence
+        </p>
+        <p style="font-size: 1rem; color: #888; margin-bottom: 2rem; font-style: italic;">
+            Developed by <strong>Rahuul Pande (152044)</strong>, Cognizant
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -1148,7 +1299,7 @@ def show_crm_tools():
     """, unsafe_allow_html=True)
     
     # CRM Tools Tabs
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["👥 Client Management", "💰 Deal Pipeline", "📅 Meeting Scheduler", "📧 Email Templates", "📊 Performance Analytics"])
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["👥 Client Management", "💰 Deal Pipeline", "📅 Meeting Scheduler", "📧 Email Templates", "📄 Proposal Templates", "📋 Contract Management", "📊 Performance Analytics"])
     
     with tab1:
         st.markdown("### 👥 Client Management")
@@ -1360,6 +1511,386 @@ def show_crm_tools():
                 st.success("✅ Email sent successfully!")
     
     with tab5:
+        st.markdown("### 📄 Proposal Templates")
+        
+        proposal_type = st.selectbox("Select Proposal Type", ["Digital Banking", "Core Banking", "Wealth Management", "Risk Management", "Compliance", "AI/ML Solutions"])
+        
+        proposals = {
+            "Digital Banking": """
+            # UBS Digital Banking Transformation Proposal
+            
+            ## Executive Summary
+            Comprehensive digital banking solution for UBS Switzerland, delivering 45% cost optimization and enhanced customer experience.
+            
+            ## Solution Overview
+            ### Phase 1: Core Platform (6 months)
+            - Modern core banking system implementation
+            - API-first architecture design
+            - Real-time transaction processing
+            - Enhanced security protocols
+            
+            ### Phase 2: Customer Experience (4 months)
+            - Mobile banking application
+            - Omnichannel integration
+            - Personalized dashboards
+            - AI-powered recommendations
+            
+            ### Phase 3: Advanced Features (2 months)
+            - Blockchain integration
+            - Advanced analytics
+            - Regulatory compliance
+            - Performance optimization
+            
+            ## Team Composition
+            - **Project Manager**: 1 (Zurich)
+            - **Tech Lead**: 2 (Zurich)
+            - **Senior Developers**: 3 (Pune)
+            - **Developers**: 5 (Pune)
+            - **QA Engineers**: 2 (Bangalore)
+            - **DevOps Engineers**: 2 (Pune)
+            
+            ## Investment & Timeline
+            - **Total Investment**: CHF 2.4M
+            - **Timeline**: 12 months
+            - **ROI**: 300% over 3 years
+            - **Risk Level**: Low
+            
+            ## Success Metrics
+            - 60% reduction in transaction processing time
+            - 45% improvement in customer satisfaction
+            - 30% increase in digital adoption
+            - 100% regulatory compliance
+            """,
+            
+            "Core Banking": """
+            # Credit Suisse Core Banking Modernization
+            
+            ## Executive Summary
+            End-to-end core banking system modernization for Credit Suisse, ensuring scalability and regulatory compliance.
+            
+            ## Technical Architecture
+            ### Infrastructure Layer
+            - Cloud-native architecture (AWS/Azure)
+            - Microservices design pattern
+            - Container orchestration (Kubernetes)
+            - Auto-scaling capabilities
+            
+            ### Application Layer
+            - Java Spring Boot applications
+            - React.js frontend
+            - GraphQL API design
+            - Event-driven architecture
+            
+            ### Data Layer
+            - PostgreSQL for transactional data
+            - Redis for caching
+            - Elasticsearch for search
+            - Apache Kafka for messaging
+            
+            ## Implementation Phases
+            ### Phase 1: Foundation (8 months)
+            - Core system architecture
+            - Basic transaction processing
+            - Security framework
+            - Compliance modules
+            
+            ### Phase 2: Enhancement (6 months)
+            - Advanced features
+            - Performance optimization
+            - Integration testing
+            - User acceptance testing
+            
+            ## Team Structure
+            - **Program Director**: 1 (Zurich)
+            - **Architecture Lead**: 1 (Zurich)
+            - **Tech Leads**: 3 (Zurich/Pune)
+            - **Senior Developers**: 8 (Pune)
+            - **Developers**: 12 (Pune)
+            - **QA Engineers**: 6 (Bangalore)
+            - **DevOps Engineers**: 4 (Pune)
+            
+            ## Investment Details
+            - **Total Budget**: CHF 4.8M
+            - **Duration**: 14 months
+            - **Expected Savings**: CHF 12M annually
+            """,
+            
+            "Wealth Management": """
+            # UBS Wealth Management Platform
+            
+            ## Executive Summary
+            Next-generation wealth management platform for UBS private banking clients, featuring AI-driven portfolio optimization.
+            
+            ## Key Features
+            ### Portfolio Management
+            - Real-time portfolio tracking
+            - AI-powered asset allocation
+            - Risk assessment algorithms
+            - Performance analytics
+            
+            ### Client Experience
+            - Personalized dashboards
+            - Mobile-first design
+            - Secure messaging
+            - Document management
+            
+            ### Compliance & Security
+            - FINMA compliance
+            - GDPR adherence
+            - Multi-factor authentication
+            - Audit trail logging
+            
+            ## Technology Stack
+            - **Frontend**: React.js, TypeScript
+            - **Backend**: Node.js, Python
+            - **Database**: PostgreSQL, Redis
+            - **AI/ML**: TensorFlow, Scikit-learn
+            - **Cloud**: AWS, Azure
+            
+            ## Team Composition
+            - **Product Manager**: 1 (Zurich)
+            - **UX/UI Designer**: 2 (Zurich)
+            - **Frontend Developers**: 4 (Pune)
+            - **Backend Developers**: 6 (Pune)
+            - **Data Scientists**: 3 (Bangalore)
+            - **QA Engineers**: 3 (Bangalore)
+            
+            ## Timeline & Investment
+            - **Duration**: 10 months
+            - **Investment**: CHF 3.2M
+            - **Expected Revenue**: CHF 15M annually
+            """,
+            
+            "Risk Management": """
+            # Credit Suisse Risk Management System
+            
+            ## Executive Summary
+            Advanced risk management platform for Credit Suisse, implementing Basel III/IV requirements and real-time risk monitoring.
+            
+            ## Risk Framework
+            ### Credit Risk
+            - Probability of default models
+            - Loss given default calculations
+            - Exposure at default analysis
+            - Portfolio risk aggregation
+            
+            ### Market Risk
+            - VaR (Value at Risk) calculations
+            - Stress testing scenarios
+            - Real-time position monitoring
+            - Limit management
+            
+            ### Operational Risk
+            - Incident tracking
+            - Control monitoring
+            - Risk assessment
+            - Compliance reporting
+            
+            ## Technical Implementation
+            - **Data Processing**: Apache Spark, Kafka
+            - **Analytics**: Python, R, SAS
+            - **Visualization**: Tableau, Power BI
+            - **Storage**: Hadoop, PostgreSQL
+            - **Compute**: AWS EMR, Azure HDInsight
+            
+            ## Team Structure
+            - **Risk Manager**: 1 (Zurich)
+            - **Quantitative Analysts**: 4 (Zurich)
+            - **Data Engineers**: 6 (Pune)
+            - **Software Developers**: 8 (Pune)
+            - **QA Engineers**: 4 (Bangalore)
+            - **DevOps Engineers**: 3 (Pune)
+            
+            ## Investment & Benefits
+            - **Investment**: CHF 2.8M
+            - **Timeline**: 9 months
+            - **Risk Reduction**: 40%
+            - **Compliance**: 100% Basel III/IV
+            """,
+            
+            "Compliance": """
+            # Swiss Banking Compliance Platform
+            
+            ## Executive Summary
+            Comprehensive compliance management system for Swiss banking regulations, covering FINMA, SNB, and international standards.
+            
+            ## Regulatory Coverage
+            ### FINMA Requirements
+            - Anti-money laundering (AML)
+            - Know your customer (KYC)
+            - Market conduct supervision
+            - Financial reporting
+            
+            ### SNB Requirements
+            - Capital adequacy reporting
+            - Liquidity monitoring
+            - Stress testing
+            - Systemic risk assessment
+            
+            ### International Standards
+            - FATF recommendations
+            - OECD guidelines
+            - EU regulations
+            - US compliance (if applicable)
+            
+            ## System Features
+            - **Automated Monitoring**: Real-time compliance checking
+            - **Reporting Engine**: Automated regulatory reports
+            - **Audit Trail**: Complete transaction history
+            - **Alert System**: Compliance violation notifications
+            - **Dashboard**: Executive compliance overview
+            
+            ## Technology Stack
+            - **Backend**: Java, Spring Boot
+            - **Frontend**: Angular, TypeScript
+            - **Database**: Oracle, PostgreSQL
+            - **Analytics**: Apache Spark, Python
+            - **Reporting**: JasperReports, Power BI
+            
+            ## Team Composition
+            - **Compliance Officer**: 1 (Zurich)
+            - **Legal Advisor**: 1 (Zurich)
+            - **Compliance Analysts**: 3 (Zurich)
+            - **Software Developers**: 6 (Pune)
+            - **Data Analysts**: 4 (Bangalore)
+            - **QA Engineers**: 3 (Bangalore)
+            
+            ## Investment & Timeline
+            - **Investment**: CHF 1.8M
+            - **Timeline**: 6 months
+            - **Compliance Rate**: 99.9%
+            """,
+            
+            "AI/ML Solutions": """
+            # AI/ML Solutions for Swiss Banking
+            
+            ## Executive Summary
+            Cutting-edge AI/ML solutions for Swiss banking operations, including fraud detection, customer insights, and process automation.
+            
+            ## AI/ML Applications
+            ### Fraud Detection
+            - Real-time transaction monitoring
+            - Anomaly detection algorithms
+            - Pattern recognition
+            - Risk scoring models
+            
+            ### Customer Analytics
+            - Customer segmentation
+            - Churn prediction
+            - Product recommendation
+            - Lifetime value calculation
+            
+            ### Process Automation
+            - Document processing (OCR)
+            - Chatbot implementation
+            - Workflow automation
+            - Predictive maintenance
+            
+            ## Technology Stack
+            - **Machine Learning**: TensorFlow, PyTorch, Scikit-learn
+            - **Data Processing**: Apache Spark, Pandas, NumPy
+            - **Big Data**: Hadoop, Kafka, Elasticsearch
+            - **Cloud**: AWS SageMaker, Azure ML
+            - **Visualization**: Matplotlib, Plotly, Tableau
+            
+            ## Team Structure
+            - **AI/ML Lead**: 1 (Zurich)
+            - **Data Scientists**: 6 (Bangalore)
+            - **ML Engineers**: 4 (Pune)
+            - **Data Engineers**: 5 (Pune)
+            - **Software Developers**: 4 (Pune)
+            - **QA Engineers**: 3 (Bangalore)
+            
+            ## Investment & ROI
+            - **Investment**: CHF 3.6M
+            - **Timeline**: 12 months
+            - **Expected ROI**: 400% over 2 years
+            - **Cost Savings**: CHF 8M annually
+            """
+        }
+        
+        st.text_area("Proposal Template", proposals.get(proposal_type, ""), height=400)
+        
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            if st.button("📋 Copy Template"):
+                st.success("✅ Proposal template copied!")
+        with col2:
+            if st.button("📄 Generate PDF"):
+                st.success("✅ PDF proposal generated!")
+        with col3:
+            if st.button("📧 Send to Client"):
+                st.success("✅ Proposal sent to client!")
+    
+    with tab6:
+        st.markdown("### 📋 Contract Management")
+        
+        # Contract Overview
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**📊 Active Contracts**")
+            
+            contracts = [
+                {"client": "UBS Switzerland", "type": "Digital Banking", "value": "CHF 2.4M", "status": "Active", "end_date": "2024-12-31"},
+                {"client": "Credit Suisse", "type": "Core Banking", "value": "CHF 4.8M", "status": "Active", "end_date": "2025-06-30"},
+                {"client": "UBS Global", "type": "Wealth Management", "value": "CHF 3.2M", "status": "Pending", "end_date": "2024-09-30"},
+                {"client": "CS Investment", "type": "Risk Management", "value": "CHF 2.8M", "status": "Active", "end_date": "2025-03-31"}
+            ]
+            
+            for contract in contracts:
+                status_color = "#28a745" if contract["status"] == "Active" else "#ffc107"
+                st.markdown(f"""
+                <div style="padding: 1rem; margin: 0.5rem 0; background: #f8f9fa; border-radius: 8px; border-left: 4px solid {status_color};">
+                    <strong>{contract['client']}</strong><br>
+                    {contract['type']} - {contract['value']}<br>
+                    Status: <span style="color: {status_color};">{contract['status']}</span> | End: {contract['end_date']}
+                </div>
+                """, unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown("**📈 Contract Metrics**")
+            
+            # Contract metrics
+            total_value = 13.2  # in millions
+            active_contracts = 3
+            pending_contracts = 1
+            avg_contract_value = total_value / (active_contracts + pending_contracts)
+            
+            st.metric("Total Contract Value", f"CHF {total_value}M", "↑ 15% vs last quarter")
+            st.metric("Active Contracts", active_contracts, "↑ 1 vs last quarter")
+            st.metric("Avg Contract Value", f"CHF {avg_contract_value:.1f}M", "↑ 8% vs last quarter")
+        
+        # Contract Management Tools
+        st.markdown("### 🔧 Contract Tools")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**📝 Create New Contract**")
+            
+            contract_client = st.selectbox("Client", ["UBS Switzerland", "Credit Suisse", "UBS Global", "CS Investment"])
+            contract_type = st.selectbox("Contract Type", ["Time & Materials", "Fixed Price", "Retainer", "SLA"])
+            contract_value = st.number_input("Contract Value (CHF)", min_value=100000, max_value=10000000, value=1000000, step=100000)
+            contract_duration = st.selectbox("Duration", ["3 months", "6 months", "12 months", "18 months", "24 months"])
+            
+            if st.button("📋 Create Contract"):
+                st.success("✅ Contract created successfully!")
+        
+        with col2:
+            st.markdown("**📊 Contract Analytics**")
+            
+            # Contract performance chart
+            months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+            revenue = [2.1, 2.3, 2.8, 3.2, 3.5, 3.8]
+            
+            fig = go.Figure(data=go.Bar(x=months, y=revenue, 
+                                       text=[f"CHF {v}M" for v in revenue], 
+                                       textposition='auto'))
+            fig.update_layout(title="Monthly Contract Revenue", xaxis_title="Month", yaxis_title="Revenue (CHF M)")
+            st.plotly_chart(fig, use_container_width=True)
+    
+    with tab7:
         st.markdown("### 📊 Performance Analytics")
         
         # CRM Performance Metrics
