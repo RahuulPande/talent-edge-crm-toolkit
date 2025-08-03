@@ -955,7 +955,7 @@ with st.sidebar:
     # Navigation with icons
     page = st.radio(
         "Navigate",
-        ["🏠 Introduction", "📊 Dashboard", "🔍 Talent Search", "👥 Team Builder", "📈 Project Query", "📊 Advanced Analytics", "💼 CRM Tools", "❓ Help"],
+        ["🏠 Introduction", "📊 Dashboard", "🔍 Talent Search", "👥 Team Builder", "📈 Project Query", "📊 Advanced Analytics", "🤖 AI & ML", "🔗 Integrations", "💼 CRM Tools", "❓ Help"],
         label_visibility="collapsed"
     )
     
@@ -1174,8 +1174,9 @@ def show_introduction_page():
             img = qr.make_image(fill_color="black", back_color="white")
             return img
         
-        # Get current URL (for local development, use localhost)
-        current_url = "http://localhost:8501"  # This will be updated for production
+        # Get current URL - for production, this should be the Streamlit Cloud URL
+        # For local development, you can change this to your actual Streamlit Cloud URL
+        current_url = "https://talent-edge-crm-toolkit.streamlit.app"  # Replace with your actual Streamlit Cloud URL
         qr_img = generate_qr_code(current_url)
         
         # Convert PIL image to bytes
@@ -1344,6 +1345,772 @@ def show_project_query():
                     Experience: {result['Experience']} | Location: {result['Location']} | Available: {result['Availability']}
                 </div>
                 """, unsafe_allow_html=True)
+
+def show_ai_ml_features():
+    """Display AI and Machine Learning features"""
+    
+    st.markdown("## 🤖 AI & Machine Learning")
+    
+    # AI Overview
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                padding: 2rem; border-radius: 15px; color: white; margin-bottom: 2rem;">
+        <h2 style="margin-bottom: 1rem;">🎯 Intelligent Swiss Banking Solutions</h2>
+        <p style="font-size: 1.1rem; opacity: 0.9;">
+            Advanced AI and ML capabilities for predictive analytics, smart recommendations, and automated insights
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # AI Features Tabs
+    tab1, tab2, tab3, tab4 = st.tabs(["📈 Predictive Analytics", "🎯 Smart Recommendations", "🗣️ Natural Language Processing", "📊 Automated Reporting"])
+    
+    with tab1:
+        st.markdown("### 📈 Predictive Analytics")
+        
+        # Deal Forecasting
+        st.markdown("#### 💰 Deal Forecasting")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**🎯 Current Pipeline Analysis**")
+            
+            # Mock forecasting data
+            forecast_data = {
+                "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+                "Predicted Revenue": [8.2, 9.1, 10.5, 11.2, 12.8, 13.5],
+                "Confidence": [85, 82, 88, 90, 87, 92]
+            }
+            
+            forecast_df = pd.DataFrame(forecast_data)
+            st.dataframe(forecast_df, use_container_width=True)
+        
+        with col2:
+            st.markdown("**📊 Forecast Chart**")
+            
+            fig = go.Figure()
+            fig.add_trace(go.Scatter(
+                x=forecast_data["Month"], 
+                y=forecast_data["Predicted Revenue"],
+                mode='lines+markers',
+                name='Predicted Revenue',
+                line=dict(color='#1f77b4', width=3)
+            ))
+            fig.update_layout(
+                title="6-Month Revenue Forecast",
+                xaxis_title="Month",
+                yaxis_title="Revenue ($M)",
+                height=300
+            )
+            st.plotly_chart(fig, use_container_width=True)
+        
+        # Talent Demand Forecasting
+        st.markdown("#### 👥 Talent Demand Forecasting")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**🔮 Predicted Skill Demand**")
+            
+            skills_demand = {
+                "Skill": ["Data Science", "Cloud Computing", "Cybersecurity", "AI/ML", "Blockchain"],
+                "Demand Growth": ["+45%", "+38%", "+52%", "+67%", "+29%"],
+                "Priority": ["High", "Medium", "High", "Critical", "Medium"]
+            }
+            
+            demand_df = pd.DataFrame(skills_demand)
+            st.dataframe(demand_df, use_container_width=True)
+        
+        with col2:
+            st.markdown("**📈 Demand Trend**")
+            
+            fig = go.Figure(data=[
+                go.Bar(x=skills_demand["Skill"], y=[45, 38, 52, 67, 29], 
+                       text=[f"+{v}" for v in [45, 38, 52, 67, 29]], 
+                       textposition='auto')
+            ])
+            fig.update_layout(
+                title="Skill Demand Growth (%)",
+                xaxis_title="Skills",
+                yaxis_title="Growth %",
+                height=300
+            )
+            st.plotly_chart(fig, use_container_width=True)
+    
+    with tab2:
+        st.markdown("### 🎯 Smart Recommendations")
+        
+        # Team Recommendations
+        st.markdown("#### 👥 Optimal Team Recommendations")
+        
+        project_type = st.selectbox("Select Project Type", ["Digital Banking", "Core Banking", "Wealth Management", "Risk Management"], key="ai_project_type")
+        
+        if st.button("🤖 Generate AI Recommendations", key="generate_ai_recommendations"):
+            st.success("✅ AI recommendations generated!")
+            
+            # Mock AI recommendations
+            recommendations = {
+                "Digital Banking": {
+                    "team_size": "15-20 members",
+                    "key_skills": ["React.js", "Node.js", "AWS", "DevOps"],
+                    "estimated_cost": "CHF 2.4M",
+                    "timeline": "12 months",
+                    "success_probability": "85%"
+                },
+                "Core Banking": {
+                    "team_size": "25-30 members",
+                    "key_skills": ["Java", "Spring Boot", "Oracle", "Microservices"],
+                    "estimated_cost": "CHF 4.8M",
+                    "timeline": "18 months",
+                    "success_probability": "78%"
+                },
+                "Wealth Management": {
+                    "team_size": "12-15 members",
+                    "key_skills": ["Python", "Data Science", "React", "PostgreSQL"],
+                    "estimated_cost": "CHF 3.2M",
+                    "timeline": "10 months",
+                    "success_probability": "92%"
+                },
+                "Risk Management": {
+                    "team_size": "18-22 members",
+                    "key_skills": ["Python", "R", "SAS", "Risk Analytics"],
+                    "estimated_cost": "CHF 2.8M",
+                    "timeline": "9 months",
+                    "success_probability": "88%"
+                }
+            }
+            
+            rec = recommendations.get(project_type, {})
+            
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown(f"""
+                **📊 AI Recommendations for {project_type}**
+                
+                - **Team Size**: {rec.get('team_size', 'N/A')}
+                - **Key Skills**: {', '.join(rec.get('key_skills', []))}
+                - **Estimated Cost**: {rec.get('estimated_cost', 'N/A')}
+                - **Timeline**: {rec.get('timeline', 'N/A')}
+                - **Success Probability**: {rec.get('success_probability', 'N/A')}
+                """)
+            
+            with col2:
+                st.markdown("**🎯 AI Confidence Metrics**")
+                
+                confidence_metrics = {
+                    "Data Quality": "95%",
+                    "Historical Patterns": "87%",
+                    "Market Trends": "92%",
+                    "Skill Availability": "89%"
+                }
+                
+                for metric, value in confidence_metrics.items():
+                    st.metric(metric, value)
+        
+        # Cost Optimization Recommendations
+        st.markdown("#### 💰 Cost Optimization Recommendations")
+        
+        if st.button("💰 Generate Cost Optimization", key="generate_cost_optimization"):
+            st.success("✅ Cost optimization recommendations generated!")
+            
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown("**💡 AI Cost Savings**")
+                
+                savings = {
+                    "Hybrid Delivery": "CHF 1.2M",
+                    "Skill Optimization": "CHF 800K",
+                    "Timeline Compression": "CHF 600K",
+                    "Resource Allocation": "CHF 400K"
+                }
+                
+                for strategy, savings_amount in savings.items():
+                    st.metric(strategy, savings_amount)
+            
+            with col2:
+                st.markdown("**📈 ROI Analysis**")
+                
+                roi_data = {
+                    "Strategy": ["Hybrid Delivery", "Skill Optimization", "Timeline Compression"],
+                    "ROI": ["300%", "250%", "180%"],
+                    "Payback Period": ["8 months", "6 months", "12 months"]
+                }
+                
+                roi_df = pd.DataFrame(roi_data)
+                st.dataframe(roi_df, use_container_width=True)
+    
+    with tab3:
+        st.markdown("### 🗣️ Natural Language Processing")
+        
+        # Advanced Query Processing
+        st.markdown("#### 🔍 Advanced Query Understanding")
+        
+        # Query examples
+        st.markdown("**💡 Example Queries**")
+        
+        examples = [
+            "Find all data scientists in Zurich with 5+ years experience for a 6-month UBS project",
+            "Show me the optimal team for a Credit Suisse core banking modernization with CHF 4M budget",
+            "What's the cost comparison between Swiss and offshore delivery for a 20-person team?",
+            "Generate a proposal for UBS digital banking transformation with AI-powered recommendations"
+        ]
+        
+        for i, example in enumerate(examples, 1):
+            st.markdown(f"**{i}.** `{example}`")
+        
+        # Query input
+        st.markdown("#### 🤖 Try Your Own Query")
+        
+        user_query = st.text_area(
+            "Enter your natural language query:",
+            placeholder="e.g., 'Find all data scientists in Zurich with 5+ years experience for a 6-month UBS project'",
+            height=100,
+            key="nlp_query_input"
+        )
+        
+        if st.button("🔍 Process Query", key="process_nlp_query"):
+            if user_query:
+                with st.spinner("🤖 AI processing your query..."):
+                    time.sleep(2)
+                
+                st.success("✅ Query processed successfully!")
+                
+                # Mock AI response
+                st.markdown("**🤖 AI Response:**")
+                st.markdown("""
+                Based on your query, I found:
+                
+                **👥 Matching Candidates:**
+                - Dr. Anna Schmidt (8 years, Data Science, Zurich, Immediate)
+                - Prof. Raj Kumar (12 years, AI/ML, Pune, 2 weeks)
+                - Elena Petrova (6 years, Data Engineering, Zurich, Immediate)
+                
+                **💰 Cost Analysis:**
+                - Swiss-based team: CHF 2.4M
+                - Hybrid team: CHF 1.8M (25% savings)
+                - Offshore team: CHF 1.2M (50% savings)
+                
+                **📊 Success Probability: 87%**
+                """)
+            else:
+                st.warning("Please enter a query to process.")
+        
+        # Sentiment Analysis
+        st.markdown("#### 😊 Sentiment Analysis")
+        
+        sentiment_text = st.text_area(
+            "Enter text for sentiment analysis:",
+            placeholder="e.g., 'The UBS project is progressing well with excellent team collaboration'",
+            height=100,
+            key="sentiment_input"
+        )
+        
+        if st.button("😊 Analyze Sentiment", key="analyze_sentiment"):
+            if sentiment_text:
+                st.success("✅ Sentiment analysis completed!")
+                
+                col1, col2, col3 = st.columns(3)
+                
+                with col1:
+                    st.metric("Sentiment Score", "Positive", "0.85")
+                
+                with col2:
+                    st.metric("Confidence", "92%")
+                
+                with col3:
+                    st.metric("Key Topics", "UBS, Project, Team")
+    
+    with tab4:
+        st.markdown("### 📊 Automated Reporting")
+        
+        # Report Types
+        st.markdown("#### 📋 AI-Generated Reports")
+        
+        report_type = st.selectbox(
+            "Select Report Type",
+            ["Executive Summary", "Team Performance", "Cost Analysis", "Risk Assessment", "Client Satisfaction"],
+            key="ai_report_type"
+        )
+        
+        if st.button("🤖 Generate AI Report", key="generate_ai_report"):
+            st.success("✅ AI report generated!")
+            
+            # Mock AI reports
+            reports = {
+                "Executive Summary": """
+                # AI-Generated Executive Summary
+                
+                ## Key Insights
+                - **Revenue Growth**: 15% increase vs last quarter
+                - **Client Satisfaction**: 4.8/5 rating
+                - **Team Performance**: 92% utilization rate
+                - **Risk Level**: Low (green status)
+                
+                ## Strategic Recommendations
+                1. **Expand UBS Partnership**: 3 new opportunities identified
+                2. **Invest in AI/ML Skills**: 67% demand growth predicted
+                3. **Optimize Hybrid Delivery**: 25% cost savings potential
+                4. **Enhance Swiss Compliance**: FINMA requirements updated
+                
+                ## Next Quarter Forecast
+                - **Expected Revenue**: CHF 15.2M
+                - **New Contracts**: 4 high-probability deals
+                - **Team Expansion**: 12 new hires recommended
+                """,
+                
+                "Team Performance": """
+                # AI-Generated Team Performance Report
+                
+                ## Performance Metrics
+                - **Overall Performance**: 92% (↑ 5% vs last quarter)
+                - **Client Satisfaction**: 4.8/5 (↑ 0.2)
+                - **Project Delivery**: 95% on-time delivery
+                - **Skill Utilization**: 88% optimal utilization
+                
+                ## Top Performers
+                1. **Sarah Müller** - Data Science Lead (Zurich)
+                2. **Raj Patel** - Cloud Architecture (Pune)
+                3. **Elena Rodriguez** - Cybersecurity Expert (Zurich)
+                4. **Michael Chen** - AI/ML Specialist (Bangalore)
+                
+                ## Improvement Areas
+                - **Advanced Analytics Skills**: 15% skill gap identified
+                - **Swiss Language Skills**: German/French proficiency needed
+                - **Regulatory Knowledge**: FINMA compliance training
+                """,
+                
+                "Cost Analysis": """
+                # AI-Generated Cost Analysis Report
+                
+                ## Current Cost Structure
+                - **Total Monthly Cost**: CHF 3.8M
+                - **Swiss Operations**: 45% of total cost
+                - **Offshore Operations**: 55% of total cost
+                - **Cost per Associate**: CHF 12,500/month
+                
+                ## Optimization Opportunities
+                1. **Hybrid Delivery**: 25% cost savings potential
+                2. **Skill Optimization**: 15% efficiency improvement
+                3. **Resource Allocation**: 10% cost reduction
+                4. **Technology Investment**: 20% productivity gain
+                
+                ## ROI Analysis
+                - **Investment Required**: CHF 2.1M
+                - **Expected Savings**: CHF 5.2M annually
+                - **Payback Period**: 5 months
+                - **3-Year ROI**: 247%
+                """,
+                
+                "Risk Assessment": """
+                # AI-Generated Risk Assessment Report
+                
+                ## Risk Categories
+                
+                ### High Risk (Red)
+                - **Regulatory Compliance**: FINMA updates required
+                - **Skill Shortage**: AI/ML specialists in high demand
+                
+                ### Medium Risk (Yellow)
+                - **Client Concentration**: 60% revenue from UBS
+                - **Geopolitical**: Swiss banking regulations
+                
+                ### Low Risk (Green)
+                - **Technical Infrastructure**: Stable and scalable
+                - **Team Performance**: High satisfaction scores
+                
+                ## Mitigation Strategies
+                1. **Compliance Training**: Mandatory FINMA updates
+                2. **Skill Development**: AI/ML certification programs
+                3. **Client Diversification**: Expand Credit Suisse portfolio
+                4. **Technology Investment**: Advanced analytics platform
+                """,
+                
+                "Client Satisfaction": """
+                # AI-Generated Client Satisfaction Report
+                
+                ## Overall Satisfaction: 4.8/5
+                
+                ## Client Breakdown
+                - **UBS Switzerland**: 4.9/5 (Excellent)
+                - **Credit Suisse**: 4.7/5 (Very Good)
+                - **UBS Global**: 4.6/5 (Very Good)
+                - **CS Investment**: 4.5/5 (Good)
+                
+                ## Key Strengths
+                1. **Technical Expertise**: 4.9/5
+                2. **Communication**: 4.8/5
+                3. **Project Delivery**: 4.7/5
+                4. **Innovation**: 4.6/5
+                
+                ## Improvement Areas
+                1. **Response Time**: Reduce from 4 hours to 2 hours
+                2. **Documentation**: Enhance technical documentation
+                3. **Training**: Provide more client training sessions
+                4. **Innovation**: Increase AI/ML solution offerings
+                """
+            }
+            
+            st.markdown(reports.get(report_type, "Report not available"))
+            
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                if st.button("📄 Export PDF", key="export_ai_report"):
+                    st.success("✅ PDF report exported!")
+            
+            with col2:
+                if st.button("📧 Send Report", key="send_ai_report"):
+                    st.success("✅ Report sent successfully!")
+
+def show_integration_features():
+    """Display integration features with external systems"""
+    
+    st.markdown("## 🔗 Integration Features")
+    
+    # Integration Overview
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                padding: 2rem; border-radius: 15px; color: white; margin-bottom: 2rem;">
+        <h2 style="margin-bottom: 1rem;">🔗 Seamless System Integration</h2>
+        <p style="font-size: 1.1rem; opacity: 0.9;">
+            Connect with CRM systems, HR platforms, email clients, and calendar applications for enhanced productivity
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Integration Tabs
+    tab1, tab2, tab3, tab4 = st.tabs(["💼 CRM Integration", "👥 HR System Integration", "📧 Email Integration", "📅 Calendar Integration"])
+    
+    with tab1:
+        st.markdown("### 💼 CRM Integration")
+        
+        # Salesforce Integration
+        st.markdown("#### 🏢 Salesforce Integration")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**🔗 Connection Status**")
+            
+            sf_status = {
+                "Connection": "✅ Connected",
+                "Last Sync": "2 minutes ago",
+                "Records Synced": "1,247",
+                "Active Deals": "23"
+            }
+            
+            for key, value in sf_status.items():
+                st.metric(key, value)
+        
+        with col2:
+            st.markdown("**📊 Salesforce Data**")
+            
+            sf_data = {
+                "Deal": ["UBS Digital Banking", "CS Risk Platform", "UBS Wealth Tech"],
+                "Value": ["$12M", "$8M", "$15M"],
+                "Stage": ["Proposal", "Discovery", "Contract"],
+                "Probability": ["75%", "60%", "85%"]
+            }
+            
+            sf_df = pd.DataFrame(sf_data)
+            st.dataframe(sf_df, use_container_width=True)
+        
+        # HubSpot Integration
+        st.markdown("#### 🎯 HubSpot Integration")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**🔗 Connection Status**")
+            
+            hs_status = {
+                "Connection": "✅ Connected",
+                "Last Sync": "5 minutes ago",
+                "Contacts Synced": "856",
+                "Companies": "124"
+            }
+            
+            for key, value in hs_status.items():
+                st.metric(key, value)
+        
+        with col2:
+            st.markdown("**📈 HubSpot Analytics**")
+            
+            hs_metrics = {
+                "Email Open Rate": "34.2%",
+                "Click-through Rate": "12.8%",
+                "Lead Conversion": "8.5%",
+                "Customer Satisfaction": "4.7/5"
+            }
+            
+            for key, value in hs_metrics.items():
+                st.metric(key, value)
+        
+        # Integration Actions
+        st.markdown("#### ⚙️ Integration Actions")
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            if st.button("🔄 Sync Salesforce", key="sync_salesforce"):
+                st.success("✅ Salesforce data synced!")
+        
+        with col2:
+            if st.button("🔄 Sync HubSpot", key="sync_hubspot"):
+                st.success("✅ HubSpot data synced!")
+        
+        with col3:
+            if st.button("📊 Generate Report", key="generate_integration_report"):
+                st.success("✅ Integration report generated!")
+    
+    with tab2:
+        st.markdown("### 👥 HR System Integration")
+        
+        # Workday Integration
+        st.markdown("#### 👔 Workday Integration")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**🔗 Connection Status**")
+            
+            wd_status = {
+                "Connection": "✅ Connected",
+                "Last Sync": "1 hour ago",
+                "Employees": "2,150",
+                "Active Projects": "45"
+            }
+            
+            for key, value in wd_status.items():
+                st.metric(key, value)
+        
+        with col2:
+            st.markdown("**📊 Workday Data**")
+            
+            wd_data = {
+                "Employee": ["Sarah Müller", "Raj Patel", "Elena Rodriguez"],
+                "Role": ["Data Scientist", "Cloud Architect", "Cybersecurity Expert"],
+                "Location": ["Zurich", "Pune", "Zurich"],
+                "Availability": ["Immediate", "2 weeks", "Immediate"]
+            }
+            
+            wd_df = pd.DataFrame(wd_data)
+            st.dataframe(wd_df, use_container_width=True)
+        
+        # SAP SuccessFactors Integration
+        st.markdown("#### 🏢 SAP SuccessFactors Integration")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**🔗 Connection Status**")
+            
+            sf_status = {
+                "Connection": "✅ Connected",
+                "Last Sync": "30 minutes ago",
+                "Skills Database": "1,847 skills",
+                "Certifications": "2,456"
+            }
+            
+            for key, value in sf_status.items():
+                st.metric(key, value)
+        
+        with col2:
+            st.markdown("**📈 SuccessFactors Analytics**")
+            
+            sf_metrics = {
+                "Skill Coverage": "94%",
+                "Certification Rate": "87%",
+                "Training Completion": "92%",
+                "Performance Rating": "4.6/5"
+            }
+            
+            for key, value in sf_metrics.items():
+                st.metric(key, value)
+        
+        # HR Integration Actions
+        st.markdown("#### ⚙️ HR Integration Actions")
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            if st.button("🔄 Sync Workday", key="sync_workday"):
+                st.success("✅ Workday data synced!")
+        
+        with col2:
+            if st.button("🔄 Sync SuccessFactors", key="sync_successfactors"):
+                st.success("✅ SuccessFactors data synced!")
+        
+        with col3:
+            if st.button("📊 HR Analytics", key="hr_analytics"):
+                st.success("✅ HR analytics generated!")
+    
+    with tab3:
+        st.markdown("### 📧 Email Integration")
+        
+        # Outlook Integration
+        st.markdown("#### 📧 Outlook Integration")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**🔗 Connection Status**")
+            
+            outlook_status = {
+                "Connection": "✅ Connected",
+                "Last Sync": "5 minutes ago",
+                "Emails Today": "47",
+                "Meetings": "8"
+            }
+            
+            for key, value in outlook_status.items():
+                st.metric(key, value)
+        
+        with col2:
+            st.markdown("**📊 Outlook Analytics**")
+            
+            outlook_metrics = {
+                "Response Rate": "89%",
+                "Meeting Attendance": "94%",
+                "Email Efficiency": "92%",
+                "Client Communication": "4.8/5"
+            }
+            
+            for key, value in outlook_metrics.items():
+                st.metric(key, value)
+        
+        # Gmail Integration
+        st.markdown("#### 📧 Gmail Integration")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**🔗 Connection Status**")
+            
+            gmail_status = {
+                "Connection": "✅ Connected",
+                "Last Sync": "2 minutes ago",
+                "Emails Today": "23",
+                "Labels": "12"
+            }
+            
+            for key, value in gmail_status.items():
+                st.metric(key, value)
+        
+        with col2:
+            st.markdown("**📈 Gmail Analytics**")
+            
+            gmail_metrics = {
+                "Inbox Zero": "78%",
+                "Response Time": "2.3 hours",
+                "Email Organization": "91%",
+                "Productivity Score": "4.6/5"
+            }
+            
+            for key, value in gmail_metrics.items():
+                st.metric(key, value)
+        
+        # Email Integration Actions
+        st.markdown("#### ⚙️ Email Integration Actions")
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            if st.button("📧 Send Template Email", key="send_template_email"):
+                st.success("✅ Template email sent!")
+        
+        with col2:
+            if st.button("📋 Schedule Follow-up", key="schedule_followup"):
+                st.success("✅ Follow-up scheduled!")
+        
+        with col3:
+            if st.button("📊 Email Analytics", key="email_analytics"):
+                st.success("✅ Email analytics generated!")
+    
+    with tab4:
+        st.markdown("### 📅 Calendar Integration")
+        
+        # Google Calendar Integration
+        st.markdown("#### 📅 Google Calendar Integration")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**🔗 Connection Status**")
+            
+            gcal_status = {
+                "Connection": "✅ Connected",
+                "Last Sync": "1 minute ago",
+                "Events Today": "6",
+                "Calendars": "3"
+            }
+            
+            for key, value in gcal_status.items():
+                st.metric(key, value)
+        
+        with col2:
+            st.markdown("**📊 Calendar Analytics**")
+            
+            gcal_metrics = {
+                "Meeting Efficiency": "87%",
+                "Time Utilization": "92%",
+                "Client Meetings": "4 today",
+                "Availability": "3 hours free"
+            }
+            
+            for key, value in gcal_metrics.items():
+                st.metric(key, value)
+        
+        # Outlook Calendar Integration
+        st.markdown("#### 📅 Outlook Calendar Integration")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("**🔗 Connection Status**")
+            
+            outlook_cal_status = {
+                "Connection": "✅ Connected",
+                "Last Sync": "30 seconds ago",
+                "Meetings Today": "8",
+                "Busy Hours": "6 hours"
+            }
+            
+            for key, value in outlook_cal_status.items():
+                st.metric(key, value)
+        
+        with col2:
+            st.markdown("**📈 Calendar Analytics**")
+            
+            outlook_cal_metrics = {
+                "Meeting Attendance": "94%",
+                "Time Management": "89%",
+                "Client Interactions": "5 today",
+                "Productivity Score": "4.7/5"
+            }
+            
+            for key, value in outlook_cal_metrics.items():
+                st.metric(key, value)
+        
+        # Calendar Integration Actions
+        st.markdown("#### ⚙️ Calendar Integration Actions")
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            if st.button("📅 Schedule Meeting", key="schedule_calendar_meeting"):
+                st.success("✅ Meeting scheduled!")
+        
+        with col2:
+            if st.button("🔄 Sync Calendars", key="sync_calendars"):
+                st.success("✅ Calendars synced!")
+        
+        with col3:
+            if st.button("📊 Calendar Analytics", key="calendar_analytics"):
+                st.success("✅ Calendar analytics generated!")
 
 def show_crm_tools():
     """Display CRM-specific tools and features"""
@@ -2878,6 +3645,10 @@ elif page == "📊 Advanced Analytics":
     from enhanced_data_structure import create_streamlit_dataset
     advanced_df = create_streamlit_dataset()
     show_advanced_analytics(advanced_df)
+elif page == "🤖 AI & ML":
+    show_ai_ml_features()
+elif page == "🔗 Integrations":
+    show_integration_features()
 elif page == "💼 CRM Tools":
     show_crm_tools()
 elif page == "❓ Help":
