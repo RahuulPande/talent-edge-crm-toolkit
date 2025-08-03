@@ -1171,7 +1171,7 @@ def show_talent_search():
         certification_filter = st.multiselect("Certifications", ["AWS", "Azure", "GCP", "CISSP", "PMP", "Scrum Master"])
     
     # Search button
-    if st.button("🔍 Search Talent", type="primary"):
+    if st.button("🔍 Search Talent", type="primary", key="search_talent"):
         st.success("✅ Found 247 matching candidates!")
         
         # Display results
@@ -1209,7 +1209,7 @@ def show_team_builder():
         location_preference = st.multiselect("Location Preference", ["Zurich", "Pune", "Bangalore", "Mumbai"])
     
     # Build team button
-    if st.button("👥 Build Optimal Team", type="primary"):
+    if st.button("👥 Build Optimal Team", type="primary", key="build_team"):
         st.success("✅ Team composition optimized!")
         
         # Display team composition
@@ -1256,7 +1256,7 @@ def show_project_query():
     nl_query = st.text_area("Ask in natural language:", 
                            placeholder="e.g., 'Show me all available data scientists in Zurich with 5+ years experience for a 6-month project'")
     
-    if st.button("🔍 Execute Query", type="primary"):
+    if st.button("🔍 Execute Query", type="primary", key="execute_query"):
         if nl_query:
             # Simulate AI processing
             with st.spinner("🤖 AI analyzing your query..."):
@@ -1378,7 +1378,7 @@ def show_crm_tools():
             date = st.date_input("Meeting Date")
             time = st.time_input("Meeting Time")
             
-            if st.button("📅 Schedule Meeting"):
+            if st.button("📅 Schedule Meeting", key="schedule_meeting"):
                 st.success(f"✅ Meeting scheduled with {client} on {date} at {time}")
         
         with col2:
@@ -1504,10 +1504,10 @@ def show_crm_tools():
         
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("📋 Copy Template"):
+            if st.button("📋 Copy Template", key="copy_email_template"):
                 st.success("✅ Template copied to clipboard!")
         with col2:
-            if st.button("📧 Send Email"):
+            if st.button("📧 Send Email", key="send_email"):
                 st.success("✅ Email sent successfully!")
     
     with tab5:
@@ -1813,13 +1813,13 @@ def show_crm_tools():
         
         col1, col2, col3 = st.columns(3)
         with col1:
-            if st.button("📋 Copy Template"):
+            if st.button("📋 Copy Template", key="copy_proposal_template"):
                 st.success("✅ Proposal template copied!")
         with col2:
-            if st.button("📄 Generate PDF"):
+            if st.button("📄 Generate PDF", key="generate_proposal_pdf"):
                 st.success("✅ PDF proposal generated!")
         with col3:
-            if st.button("📧 Send to Client"):
+            if st.button("📧 Send to Client", key="send_proposal_client"):
                 st.success("✅ Proposal sent to client!")
     
     with tab6:
@@ -1874,7 +1874,7 @@ def show_crm_tools():
             contract_value = st.number_input("Contract Value (CHF)", min_value=100000, max_value=10000000, value=1000000, step=100000)
             contract_duration = st.selectbox("Duration", ["3 months", "6 months", "12 months", "18 months", "24 months"])
             
-            if st.button("📋 Create Contract"):
+            if st.button("📋 Create Contract", key="create_contract"):
                 st.success("✅ Contract created successfully!")
         
         with col2:
