@@ -11,6 +11,7 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, 
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 import time
+from advanced_analytics import show_advanced_analytics
 
 # Page configuration
 st.set_page_config(
@@ -737,7 +738,7 @@ with st.sidebar:
     # Navigation with icons
     page = st.radio(
         "Navigate",
-        ["🏠 Dashboard", "🔍 Project Query", "📊 Visualizations", "📅 Availability", "❓ Help"],
+        ["🏠 Dashboard", "🔍 Project Query", "📊 Visualizations", "📅 Availability", "📊 Advanced Analytics", "❓ Help"],
         label_visibility="collapsed"
     )
     
@@ -1633,6 +1634,12 @@ elif page == "📅 Availability":
         - Resource Manager Notifications: ✅ Sent
         - UBS Project Dashboard: ✅ Updated
         """)
+
+elif page == "📊 Advanced Analytics":
+    # Import and use the advanced analytics module
+    from enhanced_data_structure import create_streamlit_dataset
+    advanced_df = create_streamlit_dataset()
+    show_advanced_analytics(advanced_df)
 
 elif page == "❓ Help":
     st.markdown("### ❓ Help & User Guide")
