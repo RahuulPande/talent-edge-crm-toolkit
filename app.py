@@ -769,11 +769,14 @@ st.markdown("""
         font-size: 1.1rem;
         padding: 0.5rem 0;
         transition: all 0.3s;
+        background: transparent !important; /* avoid white blocks over dark sidebar */
+        border-radius: 8px;
     }
     
     section[data-testid="stSidebar"] .stRadio [role="radiogroup"] label:hover {
         color: #4CAF50 !important;
         transform: translateX(5px);
+        background: rgba(255, 255, 255, 0.10) !important;
     }
     
     /* Absolute override to guarantee sidebar text/icon visibility */
@@ -814,6 +817,20 @@ st.markdown("""
         color: rgba(255, 255, 255, 0.98) !important;
         -webkit-text-fill-color: rgba(255, 255, 255, 0.98) !important;
         opacity: 1 !important;
+    }
+
+    /* Ensure radio containers do not force white backgrounds */
+    section[data-testid="stSidebar"] [data-baseweb="radio"] > div,
+    section[data-testid="stSidebar"] .stRadio [role="radiogroup"] div[role="radio"],
+    section[data-testid="stSidebar"] .stRadio [role="radiogroup"] label > div:first-child {
+        background: transparent !important;
+    }
+
+    /* Selected radio visual */
+    section[data-testid="stSidebar"] .stRadio [role="radiogroup"] div[aria-checked="true"],
+    section[data-testid="stSidebar"] .stRadio [role="radiogroup"] label[aria-checked="true"] {
+        background: rgba(255, 255, 255, 0.15) !important;
+        border-radius: 8px;
     }
 
     /* Input fields */
