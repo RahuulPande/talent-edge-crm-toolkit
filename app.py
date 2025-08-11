@@ -776,6 +776,46 @@ st.markdown("""
         transform: translateX(5px);
     }
     
+    /* Absolute override to guarantee sidebar text/icon visibility */
+    section[data-testid="stSidebar"] *,
+    nav[data-testid="stSidebarNav"] *,
+    .stSidebar * {
+        color: rgba(255, 255, 255, 0.98) !important;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0.98) !important;
+        opacity: 1 !important;
+    }
+
+    /* Links in sidebar */
+    section[data-testid="stSidebar"] a,
+    nav[data-testid="stSidebarNav"] a,
+    .stSidebar a {
+        color: #e6e6e6 !important;
+        text-decoration: none !important;
+    }
+
+    section[data-testid="stSidebar"] a:hover,
+    nav[data-testid="stSidebarNav"] a:hover,
+    .stSidebar a:hover {
+        color: #4CAF50 !important;
+    }
+
+    /* Ensure icons adopt visible color */
+    section[data-testid="stSidebar"] svg,
+    nav[data-testid="stSidebarNav"] svg,
+    .stSidebar svg {
+        color: rgba(255, 255, 255, 0.98) !important;
+        fill: currentColor !important;
+        stroke: currentColor !important;
+    }
+
+    /* Extra safety for radio labels */
+    section[data-testid="stSidebar"] .stRadio [role="radiogroup"] *,
+    .stSidebar .stRadio [role="radiogroup"] * {
+        color: rgba(255, 255, 255, 0.98) !important;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0.98) !important;
+        opacity: 1 !important;
+    }
+
     /* Input fields */
     .stSelectbox > div > div,
     .stTextInput > div > div > input {
